@@ -1,10 +1,11 @@
 #!/bin/bash
 
 LOGNAME=provision.log
+ERRORLOGNAME=provision-errors.log
 # Copy STDOUT to a log
 exec >  >(tee -a $LOGNAME)
-# Include STDERR to the same log
-exec 2> >(tee -a $LOGNAME >&2)
+# Output STDERR to a different log
+exec 2> >(tee -a $ERRORLOGNAME >&2)
 
 export DEBIAN_FRONTEND=noninteractive
 
