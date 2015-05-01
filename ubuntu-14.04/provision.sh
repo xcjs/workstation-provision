@@ -165,10 +165,10 @@ rm $INTELLIJDOWNLOAD $PHPSTORMDOWNLOAD
 
 # Android
 
-ANDROIDSTUDIODOWNLOAD=android-studio-ide-135.1740770-linux.zip
+ANDROIDSTUDIODOWNLOAD=android-studio-ide-141.1890965-linux.zip
 ANDROIDSDKDOWNLOAD=android-sdk_r24.1.2-linux.tgz
 
-wget https://dl.google.com/dl/android/studio/ide-zips/1.1.0/$ANDROIDSTUDIODOWNLOAD
+wget https://dl.google.com/dl/android/studio/ide-zips/1.2.0.12/$ANDROIDSTUDIODOWNLOAD
 unzip $ANDROIDSTUDIODOWNLOAD
 
 wget http://dl.google.com/android/$ANDROIDSDKDOWNLOAD
