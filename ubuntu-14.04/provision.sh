@@ -42,13 +42,16 @@ sudo add-apt-repository -y ppa:amandeepgrewal/notifyosdconfig
 # Grab the latest version of Virtualbox from the Oracle repository.
 wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+# Grab the latest owncloud-client from the openSuSE build repository 
+wget -q http://download.opensuse.org/repositories/isv:ownCloud:desktop/xUbuntu_14.10/Release.key -O- | sudo apt-key add - 
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud-client.list"
 
 sudo apt-get update
 
 # Set MySQL password ahead of time for unattended install
 sudo -E apt-get -q -y install mysql-server
 
-sudo apt-get install -y cinnamon sublime-text atom brackets remmina zeal lamp-server^ minecraft-installer keepassx virtualbox-4.3
+sudo apt-get install -y cinnamon sublime-text atom brackets remmina zeal lamp-server^ minecraft-installer keepassx virtualbox-4.3 owncloud-client
 
 sudo apt-get install -y libnotify-bin notifyosdconfig
 pkill notifyosd
