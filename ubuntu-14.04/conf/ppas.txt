@@ -36,3 +36,6 @@ ppa:amandeepgrewal/notifyosdconfig
 
 # Minecraft Installer
 ppa:minecraft-installer-peeps/minecraft-installer
+
+# Numix Theme
+ppa:numix/ppa
