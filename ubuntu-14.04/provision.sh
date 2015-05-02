@@ -10,10 +10,10 @@ exec 2> >(tee -a $ERRORLOGNAME >&2)
 export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-./fixubuntu.sh
+./lib/fixubuntu.sh
 
 # Retrieve and extract Consolas because it is my favorite programming font.
-./consolas.sh
+./lib/consolas.sh
 
 # Update software channel listings
 sudo apt-get update
