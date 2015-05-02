@@ -1,0 +1,14 @@
+atom
+brackets
+cinnamon
+fluxgui
+git
+git-svn
+keepassx
+lamp-server^
+minecraft-installer
+owncloud-client
+remmina
+sublime-text
+virtualbox-4.3
+zeal
