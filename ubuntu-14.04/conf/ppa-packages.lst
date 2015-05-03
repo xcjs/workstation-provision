@@ -7,11 +7,12 @@ git-svn
 keepassx
 lamp-server^
 minecraft-installer
-# libnotify-bin should be installed via dist-upgrade once the PPA is added.
+# libnotify-bin should be installed via apt-get upgrade once the PPA is added.
 notifyosdconfig
 numix-gtk-theme
 numix-icon-theme-circle
 numix-wallpaper-notd
+php5-cli
 remmina
 sublime-text
 virtualbox-4.3
