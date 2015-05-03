@@ -7,6 +7,8 @@ git-svn
 keepassx
 lamp-server^
 minecraft-installer
+# libnotify-bin should be installed via dist-upgrade once the PPA is added.
+notifyosdconfig
 numix-gtk-theme
 numix-icon-theme-circle
 numix-wallpaper-notd
