@@ -34,18 +34,18 @@ done
 
 newline
 echo "2. Refresh Package Archives ============================================="
-sudo -E apt-get -q update
+sudo -E apt-get -qq -y update
 
 newline
 echo "3. Install OS Updates ==================================================="
-sudo -E apt-get -qy upgrade && sudo -E apt-get -qy dist-upgrade
+sudo -E apt-get -qq -y upgrade && sudo -E apt-get -qq -y dist-upgrade
 
 newline
 echo "4. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get install -qy "$package"
+   sudo -E apt-get -qq -y install "$package"
 done
 
 newline
@@ -53,7 +53,7 @@ echo "5. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get install -qy "$package"
+   sudo -E apt-get -qq -y install "$package"
 done
 
 # Create commonly utilized directories
