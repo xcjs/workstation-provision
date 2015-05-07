@@ -14,15 +14,18 @@ export DEBIAN_FRONTEND=noninteractive
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./lib/consolas.sh
 
+# Load functions
+source ./lib/read_lst.sh
+
 # Package setup
 
 function newline {
 	echo ""
 }
 
-PPAS=$(./lib/lst-reader.sh ./conf/ppas.lst)
-PPAPACKAGES=$(./lib/lst-reader.sh ./conf/ppa-packages.lst)
-PACKAGES=$(./lib/lst-reader.sh ./conf/packages.lst)
+PPAS=$(read_lst "./conf/ppas.lst")
+PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
+PACKAGES=$(read_lst "./conf/packages.lst")
 
 newline
 echo "1. Add Personal Package Archives  ======================================="
