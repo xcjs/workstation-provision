@@ -16,12 +16,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Load functions
 source ./lib/read_lst.sh
+source ./lib/newline.sh
 
 # Package setup
-
-function newline {
-	echo ""
-}
 
 PPAS=$(read_lst "./conf/ppas.lst")
 PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
