@@ -37,6 +37,8 @@ ppa:leolik/leolik
 # GUI to configure the customizable notifyosd
 ppa:amandeepgrewal/notifyosdconfig
 
+# Pidgin plugins
+
 # Minecraft Installer
 ppa:minecraft-installer-peeps/minecraft-installer
 
