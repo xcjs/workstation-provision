@@ -60,8 +60,14 @@ do
    sudo -E apt-get -qq install "$package"
 done
 
+newline
+echo "6. Add and Install Software Sources without a PPA ======================="
+./conf/sources.sh
+
 # Create commonly utilized directories
 
+newline
+echo "7. Create Custom Home Directories ======================================="
 cd ~/
 mkdir bin Projects src www .icons .themes
 mkdir -p Pictures/UI
@@ -69,3 +75,14 @@ mkdir -p Pictures/UI
 # Link local icons and themes folder so that gksu application still look correct.
 sudo ln -s ~/.icons /root/.icons
 sudo ln -s ~/.themes /root/.themes 
+
+newline
+echo "8. Further Configure Installed Software Pacakges ========================"
+./lib/node.sh
+./lib/php.sh
+./lib/vagrant.sh
+
+# Save the biggest for last...
+newline
+echo "9. Download and Install Binaries with no Software Channel ==============="
+./lib/bin.sh
