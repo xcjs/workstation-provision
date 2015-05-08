@@ -26,6 +26,7 @@ sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepte
 PPAS=$(read_lst "./conf/ppas.lst")
 PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
+GITREPOS = $(read_lst "./conf/git-repos.lst") 
 
 newline
 echo "1. Add Personal Package Archives  ======================================="
