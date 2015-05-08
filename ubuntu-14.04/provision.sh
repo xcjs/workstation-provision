@@ -20,6 +20,9 @@ source ./lib/newline.sh
 
 # Package setup
 
+# Accept the ttf-mscorefonts-installer EULA ahead of time
+sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
+
 PPAS=$(read_lst "./conf/ppas.lst")
 PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
@@ -61,4 +64,7 @@ done
 cd ~/
 mkdir bin Projects src www .icons .themes
 mkdir -p Pictures/UI
-	
+
+# Link local icons and themes folder so that gksu application still look correct.
+sudo ln -s ~/.icons /root/.icons
+sudo ln -s ~/.themes /root/.themes 
