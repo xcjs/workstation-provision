@@ -10,5 +10,5 @@ echo "Adding Google's official Chrome channel..."
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
-sudo apt-get update
-sudo apt-get install google-chrome-stable virtualbox-4.3
+echo "Installing Google Chrome and Virtualbox 4.3..."
+sudo apt-get -qq update && sudo apt-get -qq install google-chrome-stable virtualbox-4.3
