@@ -64,10 +64,19 @@ newline
 echo "6. Add and Install Software Sources without a PPA ======================="
 ./conf/sources.sh
 
+newline
+echo "7. Add and Install Software from Git Repositories ======================="
+printf %s "$GITREPOS" | while IFS= read -r repo
+do
+   echo "Cloning $repo..."
+   git clone $repo
+done
+
+
 # Create commonly utilized directories
 
 newline
-echo "7. Create Custom Home Directories ======================================="
+echo "8. Create Custom Home Directories ======================================="
 cd ~/
 mkdir bin Projects src www .icons .themes
 mkdir -p Pictures/UI
@@ -77,12 +86,12 @@ sudo ln -s ~/.icons /root/.icons
 sudo ln -s ~/.themes /root/.themes 
 
 newline
-echo "8. Further Configure Installed Software Pacakges ========================"
+echo "9. Further Configure Installed Software Pacakges ========================"
 ./lib/node.sh
 ./lib/php.sh
 ./lib/vagrant.sh
 
 # Save the biggest for last...
 newline
-echo "9. Download and Install Binaries with no Software Channel ==============="
+echo "10. Download and Install Binaries with no Software Channel =============="
 ./lib/bin.sh
