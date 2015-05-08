@@ -72,7 +72,6 @@ do
    git clone $repo
 done
 
-
 # Create commonly utilized directories
 
 newline
