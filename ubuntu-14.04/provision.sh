@@ -29,25 +29,17 @@ PACKAGES=$(read_lst "./conf/packages.lst")
 GITREPOS=$(read_lst "./conf/git-repos.lst") 
 
 newline
-echo "1. Add Personal Package Archives  ======================================="
-printf %s "$PPAS" | while IFS= read -r ppa
-do
-	echo "Adding package archive $ppa..."
-	sudo -E add-apt-repository -y "$ppa"
-done
-
-newline
-echo "2. Refresh Package Archives ============================================="
+echo "1. Refresh Package Archives ============================================="
 echo "Updating the local package cache..."
 sudo -E apt-get -qq update > /dev/null
 
 newline
-echo "3. Install OS Updates ==================================================="
+echo "2. Install OS Updates ==================================================="
 echo "Checking for and installing operating system upates..."
 sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 newline
-echo "4. Install Selected Packages ============================================"
+echo "3. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
@@ -55,7 +47,20 @@ do
 done
 
 newline
-echo "5. Install Custom PPA Packages =========================================="
+echo "4. Add Personal Package Archives  ======================================="
+printf %s "$PPAS" | while IFS= read -r ppa
+do
+	echo "Adding package archive $ppa..."
+	sudo -E add-apt-repository -y "$ppa"
+done
+
+newline
+echo "5. Refresh Package Cache and Install Custom PPA Updates ================="
+echo "Checking for and installing third party PPA package updates..."
+sudo apt-get update && sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
+
+newline
+echo "6. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
@@ -63,11 +68,11 @@ do
 done
 
 newline
-echo "6. Add and Install Software Sources without a PPA ======================="
+echo "7. Add and Install Software Sources without a PPA ======================="
 ./conf/sources.sh
 
 newline
-echo "7. Add and Install Software from Git Repositories ======================="
+echo "8. Add and Install Software from Git Repositories ======================="
 printf %s "$GITREPOS" | while IFS= read -r repo
 do
    echo "Cloning $repo..."
@@ -77,7 +82,7 @@ done
 # Create commonly utilized directories
 
 newline
-echo "8. Create Custom Home Directories ======================================="
+echo "9. Create Custom Home Directories ======================================="
 cd ~/
 mkdir bin Projects src www .icons .themes
 mkdir -p Pictures/UI
@@ -87,7 +92,7 @@ sudo ln -s ~/.icons /root/.icons
 sudo ln -s ~/.themes /root/.themes 
 
 newline
-echo "9. Further Configure Installed Software Pacakges ========================"
+echo "10. Further Configure Installed Software Pacakges ======================="
 SCRIPTPATH=`realpath $0`
 cd $SCRIPTPATH
 ./lib/node.sh
@@ -96,6 +101,6 @@ cd $SCRIPTPATH
 
 # Save the biggest for last...
 newline
-echo "10. Download and Install Binaries with no Software Channel =============="
+echo "11. Download and Install Binaries with no Software Channel =============="
 cd $SCRIPTPATH
 ./lib/bin.sh

@@ -21,6 +21,7 @@ rdesktop
 build-essential
 codeblocks 
 filezilla
+lamp-server^
 meld 
 monodevelop 
 monodoc-manual 
@@ -30,6 +31,7 @@ nodejs-legacy
 npm
 openjdk-7-jdk
 openjdk-7-jre
+php5-cli
 redis-server
 subversion 
 tilda

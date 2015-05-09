@@ -6,7 +6,6 @@ fluxgui
 git
 git-svn
 keepassx
-lamp-server^
 minecraft-installer
 # libnotify-bin should be installed via apt-get upgrade once the PPA is added.
 notifyosdconfig
