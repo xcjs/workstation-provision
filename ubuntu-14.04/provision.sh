@@ -38,18 +38,19 @@ done
 
 newline
 echo "2. Refresh Package Archives ============================================="
-sudo -E apt-get -qq update
+sudo -E apt-get -qq update > /dev/null
 
 newline
 echo "3. Install OS Updates ==================================================="
-sudo -E apt-get -qq upgrade && sudo -E apt-get -qq dist-upgrade
+echo "Checkking for and installing operating system upates..."
+sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 newline
 echo "4. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install "$package"
+   sudo -E apt-get -qq install "$package" > /dev/null
 done
 
 newline
@@ -57,7 +58,7 @@ echo "5. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install "$package"
+   sudo -E apt-get -qq install "$package" > /dev/null
 done
 
 newline
