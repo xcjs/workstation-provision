@@ -38,6 +38,7 @@ done
 
 newline
 echo "2. Refresh Package Archives ============================================="
+echo "Updating the local package cache..."
 sudo -E apt-get -qq update > /dev/null
 
 newline
