@@ -23,7 +23,6 @@ source ./lib/newline.sh
 # Accept the ttf-mscorefonts-installer EULA ahead of time
 sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
 
-SCRIPTPATH=`realpath $0`
 PPAS=$(read_lst "./conf/ppas.lst")
 PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
@@ -88,6 +87,7 @@ sudo ln -s ~/.themes /root/.themes
 
 newline
 echo "9. Further Configure Installed Software Pacakges ========================"
+SCRIPTPATH=`realpath $0`
 cd $SCRIPTPATH
 ./lib/node.sh
 ./lib/php.sh
