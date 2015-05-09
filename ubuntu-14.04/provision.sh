@@ -42,7 +42,7 @@ sudo -E apt-get -qq update > /dev/null
 
 newline
 echo "3. Install OS Updates ==================================================="
-echo "Checkking for and installing operating system upates..."
+echo "Checking for and installing operating system upates..."
 sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 newline
