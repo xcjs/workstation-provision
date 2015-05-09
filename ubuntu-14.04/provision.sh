@@ -43,7 +43,7 @@ echo "3. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install "$package" > /dev/null
+   sudo -E apt-get -qq install $package > /dev/null
 done
 
 newline
@@ -51,7 +51,7 @@ echo "4. Add Personal Package Archives  ======================================="
 printf %s "$PPAS" | while IFS= read -r ppa
 do
 	echo "Adding package archive $ppa..."
-	sudo -E add-apt-repository -y "$ppa"
+	sudo -E add-apt-repository -y $ppa
 done
 
 newline
@@ -64,7 +64,7 @@ echo "6. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install "$package" > /dev/null
+   sudo -E apt-get -qq install $package > /dev/null
 done
 
 newline
@@ -83,9 +83,8 @@ done
 
 newline
 echo "9. Create Custom Home Directories ======================================="
-cd ~/
-mkdir bin Projects src www .icons .themes
-mkdir -p Pictures/UI
+mkdir ~/bin ~/Projects ~/src ~/www ~/.icons ~/.themes
+mkdir -p ~/Pictures/UI
 
 # Link local icons and themes folder so that gksu application still look correct.
 sudo ln -s ~/.icons /root/.icons
