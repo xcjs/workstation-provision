@@ -1,3 +1,9 @@
+apache2
+php5
+php5-cli
+php5-mysql
+libapache2-mod-auth-mysql
+libapache2-mod-php5
 atom
 brackets
 cinnamon
@@ -12,7 +18,6 @@ notifyosdconfig
 numix-gtk-theme
 numix-icon-theme-circle
 numix-wallpaper-notd
-php5-cli
 pidgin-skypeweb
 remmina
 sublime-text
