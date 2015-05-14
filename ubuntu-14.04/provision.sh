@@ -92,7 +92,7 @@ sudo ln -s ~/.themes /root/.themes
 
 newline
 echo "10. Further Configure Installed Software Pacakges ======================="
-SCRIPTPATH=`realpath $0`
+SCRIPTPATH=$dirname(`realpath $0`)
 cd $SCRIPTPATH
 ./lib/node.sh
 ./lib/php.sh
