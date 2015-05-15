@@ -39,6 +39,9 @@ ppa:amandeepgrewal/notifyosdconfig
 
 # Pidgin plugins
 
+# Pushbullet Indicator
+ppa:atareao/atareao
+
 # Minecraft Installer
 ppa:minecraft-installer-peeps/minecraft-installer
 
