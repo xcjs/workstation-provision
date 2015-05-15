@@ -15,9 +15,19 @@ keepassx
 minecraft-installer
 # libnotify-bin should be installed via apt-get upgrade once the PPA is added.
 notifyosdconfig
+numix-folders
 numix-gtk-theme
+numix-icon-theme
+numix-icon-theme-bevel
 numix-icon-theme-circle
+#numix-plymouth-theme
+#numix-tools
+numix-wallpaper-aurora
+numix-wallpaper-fs
+numix-wallpaper-lightbulb
+numix-wallpaper-mesh
 numix-wallpaper-notd
+numix-wallpaper-simple-things
 pidgin-skypeweb
 pushbullet-indicator
 remmina
