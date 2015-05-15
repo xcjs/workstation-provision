@@ -38,6 +38,7 @@ ppa:leolik/leolik
 ppa:amandeepgrewal/notifyosdconfig
 
 # Pidgin plugins
+ppa:aap/pidgin
 
 # Pushbullet Indicator
 ppa:atareao/atareao
