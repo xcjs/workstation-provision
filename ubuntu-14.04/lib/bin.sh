@@ -39,4 +39,3 @@ rm $ANDROIDSDKDOWNLOAD
 
 ln -s intellij-ide/bin/idea.sh intellij
 ln -s phpstorm-ide/bin/phpstorm.sh phpstorm
-ln -s android-studio/bin/studio.sh androidstudio
