@@ -21,7 +21,7 @@ Each root directory contains a platform-specific
 script named provision.*
 
 Executing provision will install preferred applications,
-customize selected settings, and prepare a workstaiton
+customize selected settings, and prepare a workstation
 for preferred tasks.
 
 Workstation Provision was intended to assist with new
