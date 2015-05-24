@@ -57,7 +57,7 @@ done
 newline
 echo "5. Refresh Package Cache and Install Custom PPA Updates ================="
 echo "Checking for and installing third party PPA package updates..."
-sudo apt-get update && sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
+sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 newline
 echo "6. Install Custom PPA Packages =========================================="
