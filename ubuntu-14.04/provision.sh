@@ -6,6 +6,7 @@ ERRORLOG=provision-errors.log
 exec >  >(tee -a $LOG)
 # Copy STDERR to a log
 exec 2> >(tee -a $LOG >&2)
+exec 2> >(tee -a $ERRORLOG >&2)
 
 export DEBIAN_FRONTEND=noninteractive
 
