@@ -9,7 +9,7 @@ exec 2> >(tee -a $LOG >&2)
 export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-./lib/fixubuntu.sh
+dpkg -s ubuntu-desktop 2>/dev/null >/dev/null && ./lib/fixubuntu.sh
 
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./lib/consolas.sh
