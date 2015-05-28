@@ -86,8 +86,9 @@ mkdir ~/bin ~/Projects ~/src ~/www ~/.icons ~/.themes
 mkdir -p ~/Pictures/UI
 
 # Link local icons and themes folder so that gksu application still look correct.
-sudo ln -s ~/.icons /root/.icons
-sudo ln -s ~/.themes /root/.themes 
+cd ~/
+sudo ln -s .icons /root/.icons
+sudo ln -s .themes /root/.themes 
 
 echo
 echo "10. Further Configure Installed Software Pacakges ======================="
