@@ -9,7 +9,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.name = "Ubuntu LTS Provisioning Assistant"
+  config.vm.provider "virtualbox" do |vbox|
+    vbox.name = "Ubuntu LTS Provisioning Assistant"
+  end
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
