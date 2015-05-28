@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LOG=provision.log
+ERRORLOG=provision-errors.log
 # Copy STDOUT to a log
 exec >  >(tee -a $LOG)
 # Copy STDERR to a log
@@ -9,7 +10,7 @@ exec 2> >(tee -a $LOG >&2)
 export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-dpkg -s ubuntu-desktop 2>/dev/null >/dev/null && ./lib/fixubuntu.sh
+dpkg -s ubuntu-desktop 2> /dev/null > /dev/null && ./lib/fixubuntu.sh
 
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./lib/consolas.sh
@@ -30,19 +31,19 @@ GITREPOS=$(read_lst "./conf/git-repos.lst")
 echo
 echo "1. Refresh Package Archives ============================================="
 echo "Updating the local package cache..."
-sudo -E apt-get -qq update > /dev/null
+sudo -E apt-get -qq update 2> /dev/null > /dev/null
 
 echo
 echo "2. Install OS Updates ==================================================="
 echo "Checking for and installing operating system upates..."
-sudo -E apt-get -qq upgrade > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
+sudo -E apt-get -qq upgrade 2> /dev/null > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 echo
 echo "3. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install $package > /dev/null
+   sudo -E apt-get -qq install $package 2> /dev/null > /dev/null
 done
 
 echo
@@ -50,7 +51,7 @@ echo "4. Add Personal Package Archives  ======================================="
 printf %s "$PPAS" | while IFS= read -r ppa
 do
 	echo "Adding package archive $ppa..."
-	sudo -E add-apt-repository -y $ppa
+	sudo -E add-apt-repository -y $ppa  2> /dev/null > /dev/null
 done
 
 echo
@@ -63,7 +64,7 @@ echo "6. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install $package > /dev/null
+   sudo -E apt-get -qq install $package 2> /dev/null > /dev/null
 done
 
 echo
