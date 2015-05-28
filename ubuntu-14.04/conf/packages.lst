@@ -1,9 +1,11 @@
 # System Utilities =============================================================
 gksu
 gnome-tweak-tool
+gparted
 network-manager-openvpn-gnome
 ppa-purge
 ubuntu-restricted-extras
+unetbootin
 unity-tweak-tool
 
 # Command Line Utilities =======================================================
