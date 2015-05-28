@@ -27,8 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 $script = <<SCRIPT
 cd ~/workstation-provision
-echo "Installing ubuntu-desktop for package compatibility..."
-sudo apt-get install -qq ubuntu-desktop
 ./provision.sh
 SCRIPT
 
