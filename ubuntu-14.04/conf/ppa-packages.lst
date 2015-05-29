@@ -22,12 +22,7 @@ numix-icon-theme-bevel
 numix-icon-theme-circle
 #numix-plymouth-theme
 #numix-tools
-numix-wallpaper-aurora
-numix-wallpaper-fs
-numix-wallpaper-lightbulb
-numix-wallpaper-mesh
-numix-wallpaper-notd
-numix-wallpaper-simple-things
+numix-wallpaper^
 pidgin-skypeweb
 pushbullet-indicator
 remmina
