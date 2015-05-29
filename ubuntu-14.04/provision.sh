@@ -36,7 +36,7 @@ sudo -E apt-get -qq update 2> /dev/null > /dev/null
 
 echo
 echo "2. Install OS Updates ==================================================="
-echo "Checking for and installing operating system upates..."
+echo "Checking for and installing operating system updates..."
 sudo -E apt-get -qq upgrade 2> /dev/null > /dev/null && sudo -E apt-get -qq dist-upgrade > /dev/null
 
 echo
