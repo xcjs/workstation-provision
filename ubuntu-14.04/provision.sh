@@ -11,10 +11,10 @@ exec 2> >(tee -a $ERRORLOG >&2)
 export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-dpkg -s ubuntu-desktop 2> /dev/null > /dev/null && ./lib/fixubuntu.sh
+dpkg -s ubuntu-desktop 2> /dev/null > /dev/null && ./bin/fixubuntu.sh
 
 # Retrieve and extract Consolas because it is my favorite programming font.
-./lib/consolas.sh
+./bin/consolas.sh
 
 # Load functions
 source ./lib/read_lst.sh
@@ -96,12 +96,12 @@ echo
 echo "10. Further Configure Installed Software Pacakges ======================="
 SCRIPTPATH=$(dirname `realpath $0`)
 cd $SCRIPTPATH
-./lib/node.sh
-./lib/php.sh
-./lib/vagrant.sh
+./post/node.sh
+./post/php.sh
+./post/vagrant.sh
 
 # Save the biggest for last...
 echo
 echo "11. Download and Install Binaries with no Software Channel =============="
 cd $SCRIPTPATH
-./lib/bin.sh
+./bin/binaries.sh
