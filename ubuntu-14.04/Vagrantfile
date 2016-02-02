@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 $script = <<SCRIPT
 cd /vagrant
 echo "Installing cabextract..."
-sudo apt-get -qq install cabextract
+sudo apt-get -qq install cabextract realpath
 ./provision.sh
 SCRIPT
 

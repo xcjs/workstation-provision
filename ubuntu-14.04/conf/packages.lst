@@ -11,7 +11,6 @@ unity-tweak-tool
 # Command Line Utilities =======================================================
 htop
 nano
-realpath
 screen
 w3m
 
