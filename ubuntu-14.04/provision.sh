@@ -106,3 +106,5 @@ echo
 echo "11. Download and Install Binaries with no Software Channel =============="
 cd $SCRIPTPATH
 ./bin/binaries.sh
+
+cd $SCRIPTPATH
