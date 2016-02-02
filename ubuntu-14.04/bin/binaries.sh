@@ -18,14 +18,14 @@ INTELLIJINSTALL=intellij-ide
 PHPSTORMINSTALL=phpstorm-ide
 
 echo "Downloading Intellij..."
-wget https://download.jetbrains.com/idea/$INTELLIJDOWNLOAD > /dev/null
+wget -q https://download.jetbrains.com/idea/$INTELLIJDOWNLOAD
 
 echo "Extracting Intellij..."
 mkdir $INTELLIJINSTALL
 tar -zxvf $INTELLIJDOWNLOAD --strip-components=1 -C intellij-ide > /dev/null
 
 echo "Downloading PHPStorm..."
-wget https://download.jetbrains.com/webide/$PHPSTORMDOWNLOAD > /dev/null
+wget -q https://download.jetbrains.com/webide/$PHPSTORMDOWNLOAD
 
 echo "Extracting PHPStorm..."
 mkdir $PHPSTORMINSTALL
@@ -38,7 +38,7 @@ rm $INTELLIJDOWNLOAD $PHPSTORMDOWNLOAD
 ANDROIDSDKDOWNLOAD=android-sdk_r24.1.2-linux.tgz
 
 echo "Downloading the Android SDK..."
-wget http://dl.google.com/android/$ANDROIDSDKDOWNLOAD > /dev/null
+wget -q http://dl.google.com/android/$ANDROIDSDKDOWNLOAD
 
 echo "Extracting the Android SDK..."
 tar -zxvf $ANDROIDSDKDOWNLOAD > /dev/null
@@ -46,6 +46,7 @@ tar -zxvf $ANDROIDSDKDOWNLOAD > /dev/null
 rm $ANDROIDSDKDOWNLOAD
 
 # Visual Studio Code
+
 
 # Setup symlinks to make applications executable from path (Ubuntu ~/.profile
 # adds ~/bin to path if it exists.
