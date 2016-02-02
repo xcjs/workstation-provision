@@ -1,7 +1,10 @@
 #!/bin/bash
 
-LOG=provision.log
-ERRORLOG=provision-errors.log
+SCRIPTPATH=$(dirname `realpath $0`)
+cd $SCRIPTPATH
+
+LOG=./provision.log
+ERRORLOG=./provision-errors.log
 # Copy STDOUT to a log
 exec >  >(tee -a $LOG)
 # Copy STDERR to a log
@@ -94,8 +97,6 @@ sudo ln -s .themes /root/.themes
 
 echo
 echo "10. Further Configure Installed Software Pacakges ======================="
-SCRIPTPATH=$(dirname `realpath $0`)
-cd $SCRIPTPATH
 ./post/node.sh
 ./post/php.sh
 ./post/vagrant.sh
