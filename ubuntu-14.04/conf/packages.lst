@@ -33,7 +33,6 @@ nodejs-legacy
 npm
 openjdk-7-jdk
 openjdk-7-jre
-php5-cli
 redis-server
 subversion 
 tilda
