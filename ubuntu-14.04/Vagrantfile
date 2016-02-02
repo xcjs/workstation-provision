@@ -19,10 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ubuntu14_04.vm.box = "ubuntu/trusty64"
 
 $script = <<SCRIPT
-cd ~/workstation-provision
 echo "Installing cabextract..."
 sudo apt-get -qq install cabextract
-/vagrant/provision.sh
+./provision.sh
 SCRIPT
 
     ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
