@@ -14,8 +14,6 @@ git
 git-svn
 keepassx
 minecraft-installer
-# libnotify-bin should be installed via apt-get upgrade once the PPA is added.
-notifyosdconfig
 numix-folders
 numix-gtk-theme
 numix-icon-theme
