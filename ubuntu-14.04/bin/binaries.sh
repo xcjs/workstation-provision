@@ -11,11 +11,8 @@ cd ~/bin
 
 # JetBrains
 
-INTELLIJDOWNLOAD=ideaIU-14.1.2.tar.gz
-PHPSTORMDOWNLOAD=PhpStorm-8.0.3.tar.gz
-
+INTELLIJDOWNLOAD=ideaIU-15.0.3.tar.gz
 INTELLIJINSTALL=intellij-ide
-PHPSTORMINSTALL=phpstorm-ide
 
 echo "Downloading Intellij..."
 wget -q https://download.jetbrains.com/idea/$INTELLIJDOWNLOAD
@@ -28,7 +25,10 @@ echo "Cleaning up the Intellij archive..."
 rm $INTELLIJDOWNLOAD
 
 echo "Symlinking Intellij..."
-ln -s intellij-ide/bin/idea.sh intellij
+ln -s ${INTELLIJINSTALL}/bin/idea.sh intellij
+
+PHPSTORMDOWNLOAD=PhpStorm-10.0.3.tar.gz
+PHPSTORMINSTALL=phpstorm-ide
 
 echo "Downloading PHPStorm..."
 wget -q https://download.jetbrains.com/webide/$PHPSTORMDOWNLOAD
@@ -41,7 +41,7 @@ echo "Cleaning up the PHPStorm archive..."
 rm $PHPSTORMDOWNLOAD
 
 echo "Symlinking PHPStorm..."
-ln -s phpstorm-ide/bin/phpstorm.sh phpstorm 
+ln -s ${PHPSTORMINSTALL}/bin/phpstorm.sh phpstorm 
 
 # Android SDK
 
