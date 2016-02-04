@@ -97,6 +97,8 @@ sudo ln -s .themes /root/.themes
 
 echo
 echo "10. Further Configure Installed Software Pacakges ======================="
+cd $SCRIPTPATH
+
 ./post/node.sh
 ./post/php.sh
 ./post/vagrant.sh
@@ -105,6 +107,7 @@ echo "10. Further Configure Installed Software Pacakges ======================="
 echo
 echo "11. Download and Install Binaries with no Software Channel =============="
 cd $SCRIPTPATH
+
 ./bin/binaries.sh
 
 cd $SCRIPTPATH
