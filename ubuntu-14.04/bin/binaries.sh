@@ -37,9 +37,10 @@ echo "Extracting PHPStorm..."
 mkdir $PHPSTORMINSTALL
 tar -zxvf $PHPSTORMDOWNLOAD --strip-components=1 -C phpstorm-ide > /dev/null
 
-echo "Cleaning up the PhpStorm archive..."
+echo "Cleaning up the PHPStorm archive..."
 rm $PHPSTORMDOWNLOAD
 
+echo "Symlinking PHPStorm..."
 ln -s phpstorm-ide/bin/phpstorm.sh phpstorm 
 
 # Android SDK
@@ -55,7 +56,14 @@ tar -zxvf $ANDROIDSDKDOWNLOAD > /dev/null
 rm $ANDROIDSDKDOWNLOAD
 
 # Visual Studio Code
+echo "Downloading Visual Studio Code..."
 wget -q https://az764295.vo.msecnd.net/public/0.10.6-release/VSCode-linux64.zip
+
+echo "Extracting Visual Studio Code..."
 unzip -qq VSCode-linux64.zip -d vscode-editor
+
+echo "Playing musical chairs with the Visual Studio Code directory..."
 mv vscode-editor/*/* ./vscode-editor/
+
+echo "Symlinking Visual Studio Code..."
 ln -s vscode-editor/vscode vscode
