@@ -24,6 +24,12 @@ echo "Extracting Intellij..."
 mkdir $INTELLIJINSTALL
 tar -zxvf $INTELLIJDOWNLOAD --strip-components=1 -C intellij-ide > /dev/null
 
+echo "Cleaning up the Intellij archive..."
+rm $INTELLIJDOWNLOAD
+
+echo "Symlinking Intellij..."
+ln -s intellij-ide/bin/idea.sh intellij
+
 echo "Downloading PHPStorm..."
 wget -q https://download.jetbrains.com/webide/$PHPSTORMDOWNLOAD
 
@@ -31,7 +37,10 @@ echo "Extracting PHPStorm..."
 mkdir $PHPSTORMINSTALL
 tar -zxvf $PHPSTORMDOWNLOAD --strip-components=1 -C phpstorm-ide > /dev/null
 
-rm $INTELLIJDOWNLOAD $PHPSTORMDOWNLOAD
+echo "Cleaning up the PhpStorm archive..."
+rm $PHPSTORMDOWNLOAD
+
+ln -s phpstorm-ide/bin/phpstorm.sh phpstorm 
 
 # Android SDK
 
@@ -46,12 +55,7 @@ tar -zxvf $ANDROIDSDKDOWNLOAD > /dev/null
 rm $ANDROIDSDKDOWNLOAD
 
 # Visual Studio Code
-
-
-# Setup symlinks to make applications executable from path (Ubuntu ~/.profile
-# adds ~/bin to path if it exists.
-
-echo "Setting up symlinks for the previously installed binaries for PATH support."
-
-ln -s intellij-ide/bin/idea.sh intellij
-ln -s phpstorm-ide/bin/phpstorm.sh phpstorm
+wget -q https://az764295.vo.msecnd.net/public/0.10.6-release/VSCode-linux64.zip
+unzip -qq VSCode-linux64.zip -d vscode-editor
+mv vscode-editor/*/* ./vscode-editor/
+ln -s vscode-editor/vscode vscode
