@@ -74,7 +74,7 @@ done
 
 echo
 echo "7. Add and Install Software Sources without a PPA ======================="
-./bin/sources.sh
+./sources/sources.sh
 
 echo
 echo "8. Add and Install Software from Git Repositories ======================="
