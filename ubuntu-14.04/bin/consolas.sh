@@ -5,15 +5,12 @@ echo "Install the Consolas Font ==============================================="
 echo "Installing prequiresites to extract the font..."
 sudo apt-get -qq install font-manager cabextract > /dev/null
 
-set -e
-set -x
-
 TEMPPATH='powerpointviewertmp/'
 
 mkdir -p $TEMPPATH
 cd $TEMPPATH
 
-echo "Downloading Microsoft PowerPointViewer"
+echo "Downloading Microsoft PowerPointViewer..."
 wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
 
 echo "Extracting ppviewer.cab from PowerPointViewer..."
