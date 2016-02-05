@@ -3,7 +3,7 @@
 echo "Install the Consolas Font ==============================================="
 
 echo "Installing prequiresites to extract the font..."
-sudo apt-get install font-manager cabextract 2>&1 /dev/null
+sudo apt-get -qq install font-manager cabextract > /dev/null
 
 set -e
 set -x
