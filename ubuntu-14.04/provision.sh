@@ -15,8 +15,12 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
 echo "Pre-setup. Correct Ubuntu Privacy Concerns =============================="
+
+echo "Selecting the desktop as an installed feature..."
+dpkg -s ubuntu-desktop 2>&1 /dev/null
+
 echo "Executing the fixubuntu script..."
-dpkg -s ubuntu-desktop 2>&1 /dev/null && ./lib/fixubuntu.sh 2>&1 /dev/null
+./lib/fixubuntu.sh 2>&1 /dev/null
 
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./bin/consolas.sh
