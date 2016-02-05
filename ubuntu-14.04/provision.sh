@@ -14,13 +14,15 @@ exec 2> >(tee -a $ERRORLOG >&2)
 export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-dpkg -s ubuntu-desktop 2> /dev/null > /dev/null && ./bin/fixubuntu.sh
+echo "Pre-setup. Correct Ubuntu Privacy Concerns =============================="
+echo "Executing the fixubuntu script..."
+dpkg -s ubuntu-desktop 2>&1 /dev/null && ./lib/fixubuntu.sh 2>&1 /dev/null
 
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./bin/consolas.sh
 
 # Load functions
-source ./lib/read_lst.sh
+source ./functions/read_lst.sh
 
 # Package setup
 
