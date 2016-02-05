@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Load functions
 source ./functions/read_lst.sh
 
@@ -13,8 +15,6 @@ exec >  >(tee -a $LOG)
 # Copy STDERR to a log
 exec 2> >(tee -a $LOG >&2)
 exec 2> >(tee -a $ERRORLOG >&2)
-
-export DEBIAN_FRONTEND=noninteractive
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
 echo "Pre-setup. Correct Ubuntu Privacy Concerns =============================="
