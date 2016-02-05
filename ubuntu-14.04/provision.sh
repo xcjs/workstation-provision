@@ -112,6 +112,10 @@ cd $SCRIPTPATH
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./bin/consolas.sh
 
-./bin/binaries.sh
+./bin/androidsdk
+./bin/consolas.sh
+./bin/intellij.sh
+./bin/phpstorm.sh
+./bin/visualstudiocode.sh
 
 cd $SCRIPTPATH
