@@ -1,6 +1,9 @@
 #!/bin/sh
 
-sudo apt-get install font-manager cabextract
+echo "Install the Consolas Font ==============================================="
+
+echo "Installing prequiresites to extract the font..."
+sudo apt-get install font-manager cabextract 2>&1 /dev/null
 
 set -e
 set -x
@@ -10,13 +13,21 @@ TEMPPATH='powerpointviewertmp/'
 mkdir -p $TEMPPATH
 cd $TEMPPATH
 
-wget http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
-cabextract -L -F ppviewer.cab PowerPointViewer.exe
-cabextract ppviewer.cab
+echo "Downloading Microsoft PowerPointViewer"
+wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
+
+echo "Extracting ppviewer.cab from PowerPointViewer..."
+cabextract -q -L -F ppviewer.cab PowerPointViewer.exe
+
+echo "Extracting ppviewer.cab..."
+cabextract -q ppviewer.cab
 
 mkdir -p ~/.fonts
 
+echo "Copying Consolas to ~/.fonts/"
 cp CONSOLA*.TTF ~/.fonts/
 
+
+echo "Removing the PowerPointViewer..."
 cd ../
 rm -r $TEMPPATH
