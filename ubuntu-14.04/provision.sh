@@ -25,9 +25,6 @@ dpkg -s ubuntu-desktop 2>&1 /dev/null
 echo "Executing the fixubuntu script..."
 ./lib/fixubuntu.sh 2>&1 /dev/null
 
-# Retrieve and extract Consolas because it is my favorite programming font.
-./bin/consolas.sh
-
 # Accept the ttf-mscorefonts-installer EULA ahead of time
 sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
 
@@ -111,6 +108,9 @@ cd $SCRIPTPATH
 echo
 echo "11. Download and Install Binaries with no Software Channel =============="
 cd $SCRIPTPATH
+
+# Retrieve and extract Consolas because it is my favorite programming font.
+./bin/consolas.sh
 
 ./bin/binaries.sh
 
