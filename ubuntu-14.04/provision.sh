@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Load functions
+source ./functions/read_lst.sh
+
 SCRIPTPATH=$(dirname `realpath $0`)
 cd $SCRIPTPATH
 
@@ -24,11 +27,6 @@ echo "Executing the fixubuntu script..."
 
 # Retrieve and extract Consolas because it is my favorite programming font.
 ./bin/consolas.sh
-
-# Load functions
-source ./functions/read_lst.sh
-
-# Package setup
 
 # Accept the ttf-mscorefonts-installer EULA ahead of time
 sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
