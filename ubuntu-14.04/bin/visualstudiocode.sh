@@ -5,7 +5,7 @@ FILE=VSCode-linux64.zip
 INSTALLPATH=vscode-editor
 SYMLINK=vscode
 
-ORIGINALPATH=pwd
+ORIGINALPATH=$(pwd)
 
 mkdir -p ~/bin
 cd ~/bin
