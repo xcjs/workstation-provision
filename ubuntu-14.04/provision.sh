@@ -36,19 +36,19 @@ GITREPOS=$(read_lst "./conf/git-repos.lst")
 echo
 echo "1. Refresh Package Archives ============================================="
 echo "Updating the local package cache..."
-sudo -E apt-get -qq update 2> /dev/null > /dev/null
+sudo -E apt-get -qq update 2>&1 /dev/null
 
 echo
 echo "2. Install OS Updates ==================================================="
 echo "Checking for and installing operating system updates..."
-sudo -E apt-get -qq upgrade 2> /dev/null > /dev/null && sudo -E apt-get -qq dist-upgrade 2> /dev/null > /dev/null
+sudo -E apt-get -qq upgrade 2>&1 /dev/null && sudo -E apt-get -qq dist-upgrade 2>&1 /dev/null
 
 echo
 echo "3. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install $package 2> /dev/null > /dev/null
+   sudo -E apt-get -qq install $package 2>&1 /dev/null
 done
 
 echo
@@ -56,7 +56,7 @@ echo "4. Add Personal Package Archives  ======================================="
 printf %s "$PPAS" | while IFS= read -r ppa
 do
 	echo "Adding package archive $ppa..."
-	sudo -E add-apt-repository -y $ppa  2> /dev/null > /dev/null
+	sudo -E add-apt-repository -y $ppa  2>&1 /dev/null
 done
 
 echo
@@ -69,7 +69,7 @@ echo "6. Install Custom PPA Packages =========================================="
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install $package 2> /dev/null > /dev/null
+   sudo -E apt-get -qq install $package 2>&1 /dev/null
 done
 
 echo
