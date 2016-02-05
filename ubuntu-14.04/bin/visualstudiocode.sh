@@ -21,7 +21,7 @@ VSCODEDIR=$(ls vscode-editor/ | head -1)
 mv ${INSTALLPATH}/*/* ./${INSTALLPATH}/
 rmdir ${INSTALLPATH}/${VSCODEDIR}
 
-echo "Cleanup up the archive..."
+echo "Cleaning up the archive..."
 rm ${FILE}
 
 echo "Symlinking Visual Studio Code..."
