@@ -7,6 +7,8 @@ SYMLINK=vscode
 
 ORIGINALPATH=$(pwd)
 
+echo "= Install Visual Studio Code ============================================"
+
 mkdir -p ~/bin
 cd ~/bin
 
@@ -26,5 +28,7 @@ rm ${FILE}
 
 echo "Symlinking Visual Studio Code..."
 ln -s ${INSTALLPATH}/vscode ${SYMLINK}
+
+echo
 
 cd ${ORIGINALPATH}
