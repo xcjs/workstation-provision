@@ -34,6 +34,9 @@ ppa:kilian/f.lux
 # GUI to configure the customizable notifyosd
 ppa:amandeepgrewal/notifyosdconfig
 
+# Updated Pidgin
+ppa:pidgin-developers/ppa
+
 # Pidgin plugins
 ppa:aap/pidgin
 
