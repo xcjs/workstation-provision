@@ -5,6 +5,9 @@ INSTALLPATH=phpstorm-ide
 
 ORIGINALPATH=$(pwd)
 
+mkdir -p ~/bin
+cd ~/bin
+
 echo "Downloading PHPStorm..."
 wget -q https://download.jetbrains.com/webide/${FILE}
 
