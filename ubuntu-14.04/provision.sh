@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Terminal correction for binaries that don't like screen.xterm as a terminal.
+if $TERM == "screen.xterm"
+	then
+		TERM="xterm"
+fi
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Load functions
