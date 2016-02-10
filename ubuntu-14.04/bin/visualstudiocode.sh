@@ -13,7 +13,7 @@ mkdir -p ~/bin
 cd ~/bin
 
 echo "Downloading Visual Studio Code ${VERSION}..."
-wget -q --show-progress https://az764295.vo.msecnd.net/public/${VERSION}/${FILE}
+wget -q https://az764295.vo.msecnd.net/public/${VERSION}/${FILE}
 
 echo "Extracting Visual Studio Code..."
 unzip -qq $FILE -d ${INSTALLPATH}
