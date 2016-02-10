@@ -3,6 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 # Load functions
+source ./functions/header.sh
 source ./functions/read_lst.sh
 
 SCRIPTPATH=$(dirname `realpath $0`)
@@ -17,7 +18,7 @@ exec 2> >(tee -a $LOG >&2)
 exec 2> >(tee -a $ERRORLOG >&2)
 
 # Execute the Fix Ubuntu script to ensure additional privacy.
-echo "Pre-setup. Correct Ubuntu Privacy Concerns =============================="
+header "Pre-setup. Correct Ubuntu Privacy Concerns"
 
 echo "Selecting the desktop as an installed feature..."
 dpkg -s ubuntu-desktop > /dev/null 2>&1
@@ -33,39 +34,39 @@ PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
 GITREPOS=$(read_lst "./conf/git-repos.lst") 
 
-echo
-echo "1. Refresh Package Archives ============================================="
+header "1. Refresh Package Archives"
+
 echo "Updating the local package cache..."
 sudo -E apt-get -qq update > /dev/null 2>&1
 
-echo
-echo "2. Install OS Updates ==================================================="
+header "2. Install OS Updates"
+
 echo "Checking for and installing operating system updates..."
 sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
-echo
-echo "3. Install Selected Packages ============================================"
+header "3. Install Selected Packages"
+
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
    sudo -E apt-get -qq install $package > /dev/null 2>&1
 done
 
-echo
-echo "4. Add Personal Package Archives  ======================================="
+header "4. Add Personal Package Archives"
+
 printf %s "$PPAS" | while IFS= read -r ppa
 do
 	echo "Adding package archive $ppa..."
 	sudo -E add-apt-repository -y $ppa  > /dev/null 2>&1
 done
 
-echo
-echo "5. Refresh Package Cache and Install Custom PPA Updates ================="
+header "5. Refresh Package Cache and Install Custom PPA Updates"
+
 echo "Checking for and installing third party PPA package updates..."
 sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
-echo
-echo "6. Install Custom PPA Packages =========================================="
+header "6. Install Custom PPA Packages"
+
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
 	if test -x "./pre/${package}.sh"
@@ -90,12 +91,12 @@ do
 	fi
 done
 
-echo
-echo "7. Add and Install Software Sources without a PPA ======================="
+header "7. Add and Install Software Sources without a PPA"
+
 ./sources/sources.sh
 
-echo
-echo "8. Add and Install Software from Git Repositories ======================="
+header "8. Add and Install Software from Git Repositories"
+
 printf %s "$GITREPOS" | while IFS= read -r repo
 do
    echo "Cloning $repo..."
@@ -104,8 +105,8 @@ done
 
 # Create commonly utilized directories
 
-echo
-echo "9. Create Custom Home Directories ======================================="
+header "9. Create Custom Home Directories"
+
 mkdir ~/bin ~/Projects ~/src ~/www ~/.icons ~/.themes
 mkdir -p ~/Pictures/UI
 
@@ -115,8 +116,8 @@ sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
 
 # Save the biggest for last...
-echo
-echo "11. Download and Install Binaries with no Software Channel =============="
+header "11. Download and Install Binaries with no Software Channel"
+
 cd $SCRIPTPATH
 
 # Retrieve and extract Consolas because it is my favorite programming font.
