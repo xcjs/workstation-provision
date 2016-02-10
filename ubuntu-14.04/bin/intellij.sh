@@ -9,7 +9,7 @@ mkdir -p ~/bin
 cd ~/bin
 
 echo "Downloading Intellij..."
-wget -q https://download.jetbrains.com/idea/${FILE}
+wget -q --show-progress https://download.jetbrains.com/idea/${FILE}
 
 echo "Extracting Intellij..."
 mkdir ${INSTALLPATH}
