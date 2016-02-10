@@ -11,6 +11,7 @@ unity-tweak-tool
 # Command Line Utilities =======================================================
 htop
 nano
+realpath
 screen
 tmux
 w3m

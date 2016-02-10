@@ -12,7 +12,7 @@ export DEBIAN_FRONTEND=noninteractive
 source ./functions/header.sh
 source ./functions/read_lst.sh
 
-SCRIPTPATH=$(dirname `realpath $0`)
+SCRIPTPATH="$(dirname -- "$(readlink -f -- "$0")")"
 cd $SCRIPTPATH
 
 LOG=./provision.log
