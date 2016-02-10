@@ -32,9 +32,6 @@ dpkg -s ubuntu-desktop > /dev/null 2>&1
 echo "Executing the fixubuntu script..."
 ./lib/fixubuntu.sh > /dev/null 2>&1
 
-# Accept the ttf-mscorefonts-installer EULA ahead of time
-sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
-
 PPAS=$(read_lst "./conf/ppas.lst")
 PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
