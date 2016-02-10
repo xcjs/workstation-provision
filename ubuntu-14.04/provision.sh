@@ -20,10 +20,10 @@ exec 2> >(tee -a $ERRORLOG >&2)
 echo "Pre-setup. Correct Ubuntu Privacy Concerns =============================="
 
 echo "Selecting the desktop as an installed feature..."
-dpkg -s ubuntu-desktop 2>&1 /dev/null
+dpkg -s ubuntu-desktop > /dev/null 2>&1
 
 echo "Executing the fixubuntu script..."
-./lib/fixubuntu.sh 2>&1 /dev/null
+./lib/fixubuntu.sh > /dev/null 2>&1
 
 # Accept the ttf-mscorefonts-installer EULA ahead of time
 sudo debconf-set-selections <<< "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true"
@@ -36,19 +36,19 @@ GITREPOS=$(read_lst "./conf/git-repos.lst")
 echo
 echo "1. Refresh Package Archives ============================================="
 echo "Updating the local package cache..."
-sudo -E apt-get -qq update 2>&1 /dev/null
+sudo -E apt-get -qq update > /dev/null 2>&1
 
 echo
 echo "2. Install OS Updates ==================================================="
 echo "Checking for and installing operating system updates..."
-sudo -E apt-get -qq upgrade 2>&1 /dev/null && sudo -E apt-get -qq dist-upgrade 2>&1 /dev/null
+sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
 echo
 echo "3. Install Selected Packages ============================================"
 printf %s "$PACKAGES" | while IFS= read -r package
 do
    echo "Installing $package..."
-   sudo -E apt-get -qq install $package 2>&1 /dev/null
+   sudo -E apt-get -qq install $package > /dev/null 2>&1
 done
 
 echo
@@ -56,13 +56,13 @@ echo "4. Add Personal Package Archives  ======================================="
 printf %s "$PPAS" | while IFS= read -r ppa
 do
 	echo "Adding package archive $ppa..."
-	sudo -E add-apt-repository -y $ppa  2>&1 /dev/null
+	sudo -E add-apt-repository -y $ppa  > /dev/null 2>&1
 done
 
 echo
 echo "5. Refresh Package Cache and Install Custom PPA Updates ================="
 echo "Checking for and installing third party PPA package updates..."
-sudo apt-get -qq update && sudo -E apt-get -qq upgrade 2> /dev/null > /dev/null && sudo -E apt-get -qq dist-upgrade 2> /dev/null > /dev/null
+sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
 echo
 echo "6. Install Custom PPA Packages =========================================="
@@ -78,7 +78,7 @@ do
 	fi
 
 	echo "Installing $package..."
-	sudo -E apt-get -qq install $package 2>&1 /dev/null
+	sudo -E apt-get -qq install $package > /dev/null 2>&1
 
 	if test -x "./post/${package}.sh"
 		then 
