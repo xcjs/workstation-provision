@@ -1,6 +1,7 @@
 header () {
 	echo
 	separator
+	echo
 	echo "${1}"
 	separator
 	echo	
