@@ -59,7 +59,7 @@ vlc
 # Utilities ====================================================================
 compizconfig-settings-manager
 compiz-plugins
-conduit
+grsync
 keepassx
 kupfer
 p7zip-full
