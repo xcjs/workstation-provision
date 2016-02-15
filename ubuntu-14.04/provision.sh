@@ -137,7 +137,7 @@ sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
 
 # Save the biggest for last...
-header "11. Download and Install Binaries with no Software Channel"
+header "10. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
