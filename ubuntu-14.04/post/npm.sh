@@ -14,5 +14,8 @@ sudo npm install -g gulp > /dev/null
 echo "Installing Bower..."
 sudo npm install -g bower > /dev/null
 
+echo "Installing Express..."
+sudo npm install -g express > /dev/null
+
 echo "Installing Sails..."
 sudo npm install -g sails > /dev/null
