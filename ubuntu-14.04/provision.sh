@@ -118,11 +118,15 @@ header "7. Add and Install Software Sources without a PPA"
 
 header "8. Add and Install Software from Git Repositories"
 
+cd ~/
+
 printf %s "$GITREPOS" | while IFS= read -r repo
 do
    echo "Cloning $repo..."
    git clone $repo
 done
+
+cd ${SCRIPTPATH}
 
 # Create commonly utilized directories
 
