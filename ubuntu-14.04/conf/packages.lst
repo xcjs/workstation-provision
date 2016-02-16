@@ -52,8 +52,10 @@ midori
 skype
 
 # Media ========================================================================
-audacious 
+audacious
 audacity
+gnome-music
+mediatag
 vlc
 
 # Utilities ====================================================================
