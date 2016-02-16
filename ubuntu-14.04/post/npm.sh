@@ -1,9 +1,18 @@
 #!/bin/bash
 
-# Update npm
-sudo npm install -g npm
+echo "Updating NPM..."
+sudo npm install -g npm /dev/null
 
 # Install commonly used npm packages globally
-sudo npm install -g grunt-cli
-sudo npm install -g bower
-sudo npm install -g sails
+
+echo "Installing Grunt..."
+sudo npm install -g grunt-cli > /dev/null
+
+echo "Installing Gulp..."
+sudo npm install -g gulp > /dev/null
+
+echo "Installing Bower..."
+sudo npm install -g bower > /dev/null
+
+echo "Installing Sails..."
+sudo npm install -g sails > /dev/null
