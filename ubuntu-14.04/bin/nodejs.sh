@@ -5,7 +5,7 @@ echo "= Install Node.js 5.x ==================================================="
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 
 echo "Installing nodejs..."
-sudo apt-get -qq install nodejs nodejs-legacy npm > /dev/null 2>&1
+sudo apt-get -qq install nodejs > /dev/null 2>&1
 
 echo "Installing nodejs-legacy..."
 sudo apt-get -qq install nodejs-legacy > /dev/null 2>&1
