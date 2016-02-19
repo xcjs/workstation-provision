@@ -147,6 +147,7 @@ cd $SCRIPTPATH
 #./bin/androidsdk
 ./bin/consolas.sh
 ./bin/intellij.sh
+./bin/nodejs.sh
 ./bin/phpstorm.sh
 ./bin/visualstudiocode.sh
 
