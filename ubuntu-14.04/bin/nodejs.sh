@@ -13,6 +13,9 @@ sudo apt-get -qq install nodejs-legacy > /dev/null 2>&1
 echo "Installing npm..."
 sudo apt-get -qq install npm > /dev/null 2>&1
 
+echo "Refreshing the command cache..."
+hash -r
+
 echo "Updating NPM..."
 sudo npm install -g npm /dev/null
 
