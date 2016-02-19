@@ -144,9 +144,6 @@ header "10. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
-# Retrieve and extract Consolas because it is my favorite programming font.
-./bin/consolas.sh
-
 #./bin/androidsdk
 ./bin/consolas.sh
 ./bin/intellij.sh
