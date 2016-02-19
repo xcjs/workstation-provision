@@ -144,11 +144,10 @@ header "10. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
-#./bin/androidsdk
-./bin/consolas.sh
-./bin/intellij.sh
-./bin/nodejs.sh
-./bin/phpstorm.sh
-./bin/visualstudiocode.sh
+for file in ls ./bin/*.sh
+	do
+		echo "Executing custom installer ${file}..."
+		sh $file
+done
 
 cd $SCRIPTPATH
