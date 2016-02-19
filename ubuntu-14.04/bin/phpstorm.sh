@@ -5,6 +5,8 @@ INSTALLPATH=phpstorm-ide
 
 ORIGINALPATH=$(pwd)
 
+echo "= Install PHPStorm ======================================================"
+
 mkdir -p ~/bin
 cd ~/bin
 

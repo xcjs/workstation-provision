@@ -5,6 +5,8 @@ INSTALLPATH=intellij-ide
 
 ORIGINALPATH=$(pwd)
 
+echo "= Install Intellij ======================================================"
+
 mkdir -p ~/bin
 cd ~/bin
 
