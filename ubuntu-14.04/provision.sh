@@ -134,7 +134,7 @@ header "9. Create Custom Home Directories"
 
 mkdir -p ~/bin ~/Projects ~/src ~/www ~/.icons ~/.themes ~/Pictures/UI
 
-# Link local icons and themes folder so that gksu application still look correct.
+# Link local icons and themes folder so that gksu applications still look correct.
 cd ~/
 sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
