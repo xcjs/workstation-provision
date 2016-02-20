@@ -20,6 +20,8 @@ echo "Updating NPM..."
 sudo npm install -g npm /dev/null
 
 # Install commonly used npm packages globally
+echo "Installing Bower..."
+sudo npm install -g bower > /dev/null
 
 echo "Installing Grunt..."
 sudo npm install -g grunt-cli > /dev/null
@@ -27,8 +29,8 @@ sudo npm install -g grunt-cli > /dev/null
 echo "Installing Gulp..."
 sudo npm install -g gulp > /dev/null
 
-echo "Installing Bower..."
-sudo npm install -g bower > /dev/null
+echo "Installing Yeoman..."
+sudo npm install -g yo > /dev/null
 
 echo "Installing Express..."
 sudo npm install -g express > /dev/null
