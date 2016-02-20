@@ -144,7 +144,7 @@ header "10. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
-for file in ls ./bin/*.sh
+for file in $(ls ./bin/*.sh)
 	do
 		echo "Executing custom installer ${file}..."
 		sh $file
