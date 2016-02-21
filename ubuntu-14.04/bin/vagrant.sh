@@ -10,7 +10,7 @@ echo "= Install Vagrant ======================================================="
 echo "Downloading Vagrant..."
 wget -q https://releases.hashicorp.com/vagrant/${VERSION}/${FILE}
 
-"Installing Vagrant..."
+echo "Installing Vagrant..."
 sudo dpkg -i
 
 echo "Installing Ruby gem prerequsisites..."
