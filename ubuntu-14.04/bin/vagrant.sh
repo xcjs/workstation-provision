@@ -7,7 +7,7 @@ ORIGINALPATH=$(pwd)
 
 echo "= Install Vagrant ======================================================="
 
-"Downloading Vagrant..."
+echo "Downloading Vagrant..."
 wget -q https://releases.hashicorp.com/vagrant/${VERSION}/${FILE}
 
 "Installing Vagrant..."
