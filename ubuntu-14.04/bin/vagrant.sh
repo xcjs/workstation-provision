@@ -1,5 +1,18 @@
 #!/bin/bash
 
+VERSION=1.8.1
+FILE=$(vagrant_${VERSION}_x86_64.deb)
+
+ORIGINALPATH=$(pwd)
+
+echo "= Install Vagrant ======================================================="
+
+"Downloading Vagrant..."
+wget -q https://releases.hashicorp.com/vagrant/${VERSION}/${FILE}
+
+"Installing Vagrant..."
+sudo dpkg -i
+
 echo "Installing Ruby gem prerequsisites..."
 sudo apt-get -qq install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev autoconf libc6-dev ncurses-dev automake libtool > /dev/null 2>&1
 
@@ -14,3 +27,5 @@ sudo vagrant plugin install vagrant-digitalocean > /dev/null
 
 echo "Installing vagrant-linode..."
 sudo vagrant plugin install vagrant-linode > /dev/null
+
+cd ${ORIGINALPATH}
