@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION=1.8.1
-FILE=$(vagrant_${VERSION}_x86_64.deb)
+FILE=vagrant_${VERSION}_x86_64.deb
 
 ORIGINALPATH=$(pwd)
 
