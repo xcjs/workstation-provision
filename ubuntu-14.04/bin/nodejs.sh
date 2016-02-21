@@ -2,7 +2,7 @@
 
 echo "= Install Node.js 5.x ==================================================="
 
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - > /dev/null
 
 echo "Installing nodejs..."
 sudo apt-get -qq install nodejs > /dev/null 2>&1
