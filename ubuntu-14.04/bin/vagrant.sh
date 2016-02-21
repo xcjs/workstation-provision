@@ -11,7 +11,7 @@ echo "Downloading Vagrant..."
 wget -q https://releases.hashicorp.com/vagrant/${VERSION}/${FILE}
 
 echo "Installing Vagrant..."
-sudo dpkg -i ${FILE}
+sudo dpkg -i ${FILE} > /dev/null
 
 echo "Cleaning up..."
 rm ${FILE}
