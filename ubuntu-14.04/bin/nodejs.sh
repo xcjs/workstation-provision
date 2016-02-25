@@ -17,7 +17,7 @@ echo "Refreshing the command cache..."
 hash -r
 
 echo "Updating NPM..."
-sudo npm install -g npm /dev/null
+sudo npm install -g npm > /dev/null
 
 # Install commonly used npm packages globally
 echo "Installing Bower..."
