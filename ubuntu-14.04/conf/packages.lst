@@ -35,7 +35,6 @@ openjdk-7-jre
 redis-server
 subversion 
 tilda
-vagrant
 vim
 
 # Graphics =====================================================================
