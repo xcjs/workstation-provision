@@ -122,8 +122,9 @@ cd ~/
 
 printf %s "$GITREPOS" | while IFS= read -r repo
 do
-   echo "Cloning $repo..."
-   git clone "${repo[@]}"
+	repo=($repo)
+	echo "Cloning $repo..."
+	eval git clone "${repo[@]}"
 done
 
 cd ${SCRIPTPATH}
