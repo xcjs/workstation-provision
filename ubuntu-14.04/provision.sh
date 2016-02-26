@@ -123,7 +123,7 @@ cd ~/
 printf %s "$GITREPOS" | while IFS= read -r repo
 do
    echo "Cloning $repo..."
-   git clone $repo
+   git clone "${repo[@]}"
 done
 
 cd ${SCRIPTPATH}
