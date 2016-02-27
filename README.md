@@ -1,29 +1,22 @@
 Workstation Provision
 =====================
 
-Workstation Provision provides scripts used to 
-automate the setup of new computer workstations 
-with a heavy bias toward my own personal 
-preferences.
+Workstation Provision provides scripts used to automate the setup of new 
+computer workstations with a heavy bias toward my own personal preferences.
 
-You are free to fork this repository and make your 
-own customizations. The goal is to make customization 
-possible using the conf subdirectory available under 
-each supported platform.
+You are free to fork this repository and make your own customizations. The goal 
+is to make customization possible using the various subdirectories available
+under each supported platform.
 
-Each supported platform and version contains 
-a directory in the root of the project in the
-following format:
+Each supported platform and version contains a directory in the root of the
+project in the following format:
 
-	operating_system-semantic.version/
+	workstation-type/operating_system-version.minorversion/
 
-Each root directory contains a platform-specific 
-script named provision.*
+Each OS directory contains a platform-specific script named provision.*
 
-Executing provision will install preferred applications,
-customize selected settings, and prepare a workstation
-for preferred tasks.
+Executing provision will install preferred applications, customize selected
+settings, and prepare a workstation for preferred tasks.
 
-Workstation Provision was intended to assist with new
-systems or aid in migrating from different workstations
-to help with initial setup.
+Workstation Provision was intended to assist with new systems or aid in
+migrating from different workstations to help with initial setup.
