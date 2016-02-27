@@ -112,11 +112,7 @@ do
 	fi
 done
 
-header "7. Add and Install Software Sources without a PPA"
-
-./sources/sources.sh
-
-header "8. Add and Install Software from Git Repositories"
+header "7. Add and Install Software from Git Repositories"
 
 cd ~/
 
@@ -131,7 +127,7 @@ cd ${SCRIPTPATH}
 
 # Create commonly utilized directories
 
-header "9. Create Custom Home Directories"
+header "8. Create Custom Home Directories"
 
 mkdir -p ~/bin ~/Projects ~/src ~/.icons ~/.themes ~/Pictures/UI
 
@@ -141,7 +137,7 @@ sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
 
 # Save the biggest for last...
-header "10. Download and Install Binaries with no Software Channel"
+header "9. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
