@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # please see the online documentation at vagrantup.com.
 
   config.vm.provider "virtualbox" do |vbox|
-      vbox.name = "Ubuntu LTS Provisioning Assistant"
+      vbox.name = "Ubuntu 14.04 Mobile Development Provisioning Assistant"
   end
 
 
