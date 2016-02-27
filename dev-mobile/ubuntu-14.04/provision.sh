@@ -133,7 +133,7 @@ cd ${SCRIPTPATH}
 
 header "9. Create Custom Home Directories"
 
-mkdir -p ~/bin ~/Projects ~/src ~/www ~/.icons ~/.themes ~/Pictures/UI
+mkdir -p ~/bin ~/Projects ~/src ~/.icons ~/.themes ~/Pictures/UI
 
 # Link local icons and themes folder so that gksu applications still look correct.
 cd ~/
