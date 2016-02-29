@@ -37,17 +37,14 @@ PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 PACKAGES=$(read_lst "./conf/packages.lst")
 GITREPOS=$(read_lst "./conf/git-repos.lst") 
 
-header "1. Refresh Package Archives"
-
-echo "Updating the local package cache..."
+header "1. Install OS Updates"
+"Refreshing the package cache..."
 sudo -E apt-get -qq update > /dev/null 2>&1
-
-header "2. Install OS Updates"
 
 echo "Checking for and installing operating system updates..."
 sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
-header "3. Install Selected Packages"
+header "2. Install Selected Packages"
 
 printf %s "$PACKAGES" | while IFS= read -r package
 do
@@ -73,7 +70,7 @@ do
 	fi
 done
 
-header "4. Add Personal Package Archives"
+header "3. Add Personal Package Archives"
 
 printf %s "$PPAS" | while IFS= read -r ppa
 do
@@ -81,12 +78,12 @@ do
 	sudo -E add-apt-repository -y $ppa  > /dev/null 2>&1
 done
 
-header "5. Refresh Package Cache and Install Custom PPA Updates"
+header "4. Refresh Package Cache and Install Custom PPA Updates"
 
 echo "Checking for and installing third party PPA package updates..."
 sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
-header "6. Install Custom PPA Packages"
+header "5. Install Custom PPA Packages"
 
 printf %s "$PPAPACKAGES" | while IFS= read -r package
 do
@@ -112,7 +109,7 @@ do
 	fi
 done
 
-header "7. Add and Install Software from Git Repositories"
+header "6. Add and Install Software from Git Repositories"
 
 cd ~/
 
@@ -127,7 +124,7 @@ cd ${SCRIPTPATH}
 
 # Create commonly utilized directories
 
-header "8. Create Custom Home Directories"
+header "7. Create Custom Home Directories"
 
 mkdir -p ~/bin ~/Projects ~/src ~/.icons ~/.themes ~/Pictures/UI
 
@@ -137,7 +134,7 @@ sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
 
 # Save the biggest for last...
-header "9. Download and Install Binaries with no Software Channel"
+header "8. Download and Install Binaries with no Software Channel"
 
 cd $SCRIPTPATH
 
