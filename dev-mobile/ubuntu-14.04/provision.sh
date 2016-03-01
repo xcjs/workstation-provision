@@ -31,7 +31,7 @@ cd $SCRIPTPATH
 
 for script in $(ls ./sequence/*.sh | sort -n); do
 	header $(basename "$script")
-	sh "./${script}"
+	sh "${script}"
 
 	cd $SCRIPTPATH
 done
