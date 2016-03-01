@@ -30,7 +30,7 @@ exec 2> >(tee -a "${errorLog}" >&2)
 
 cd $SCRIPTPATH
 
-for script in $(ls ./sequence/*.sh | sort -n) do
+for script in $(ls ./sequence/*.sh | sort -n); do
 	header $(basename "$script")
 	sh "${script}"
 
