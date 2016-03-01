@@ -1,6 +1,6 @@
 #!/bin/bash
 
-"Refreshing the package cache..."
+echo "Refreshing the package cache..."
 sudo -E apt-get -qq update > /dev/null 2>&1
 
 echo "Checking for and installing operating system updates..."
