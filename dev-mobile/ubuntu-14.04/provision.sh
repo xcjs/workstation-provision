@@ -32,7 +32,7 @@ cd $SCRIPTPATH
 IFS=$'\n'
 for script in $(ls ./sequence/*.sh | sort -n); do
 	header $(basename "${script}")
-	sh "${script}"
+	exec "${script}"
 
 	cd $SCRIPTPATH
 done
