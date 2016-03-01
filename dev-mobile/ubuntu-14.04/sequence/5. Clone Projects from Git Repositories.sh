@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITREPOS=$(read_lst "../conf/git-repos.lst") 
+GITREPOS=$(read_lst "./conf/git-repos.lst") 
 
 cd ~/
 
