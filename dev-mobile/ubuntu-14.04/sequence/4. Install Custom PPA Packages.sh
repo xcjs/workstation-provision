@@ -5,8 +5,7 @@ PPAPACKAGES=$(read_lst "./conf/ppa-packages.lst")
 echo "Checking for and installing third party PPA package updates..."
 sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
 
-printf %s "$PPAPACKAGES" | while IFS= read -r package
-do
+printf %s "$PPAPACKAGES" | while IFS= read -r package; do
 	if test -x "./pre/${package}.sh"
 		then
 			echo 
