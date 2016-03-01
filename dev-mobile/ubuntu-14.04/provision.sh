@@ -1,12 +1,12 @@
 #!/bin/bash
 
-TERM_renamed=false
+screenWorkaround=false
 
 # Terminal correction for binaries that don't like screen.xterm as a terminal.
 if [ "${TERM}" == "screen.xterm" ]
 	then
 		TERM="xterm"
-		TERM_renamed=true
+		screenWorkaround=true
 fi
 
 export DEBIAN_FRONTEND=noninteractive
@@ -42,6 +42,6 @@ unset DEBIAN_FRONTEND
 unset SCRIPTPATH
 unset -f read_lst
 
-if TERM_renamed; then
+if ${screenWorkaround}; then
 	TERM="screen.xterm"
 fi
