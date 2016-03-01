@@ -3,8 +3,7 @@
 screenWorkaround=false
 
 # Terminal correction for binaries that don't like screen.xterm as a terminal.
-if [ "${TERM}" == "screen.xterm" ]
-	then
+if [ "${TERM}" == "screen.xterm" ]; then
 		TERM="xterm"
 		screenWorkaround=true
 fi
