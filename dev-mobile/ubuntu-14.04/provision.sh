@@ -29,8 +29,9 @@ exec 2> >(tee -a "${errorLog}" >&2)
 
 cd $SCRIPTPATH
 
+IFS=$'\n'
 for script in $(ls ./sequence/*.sh | sort -n); do
-	header $(basename "$script")
+	header $(basename "${script}")
 	sh "${script}"
 
 	cd $SCRIPTPATH
