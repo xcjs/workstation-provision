@@ -34,7 +34,7 @@ for script in $(ls ./sequence/*.sh | sort -n); do
 	header $(basename "${script}")
 	"${script}"
 
-	cd $scriptPath
+	cd "${scriptPath}"
 done
 
 # Clean-up exported variables and functions
