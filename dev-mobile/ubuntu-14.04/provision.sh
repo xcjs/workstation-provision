@@ -17,7 +17,7 @@ source ./functions/read_lst.sh
 # Export shared functions
 export -f read_lst
 
-export SCRIPTPATH="$(dirname -- "$(readlink -f -- "$0")")"
+export scriptPath="$(dirname -- "$(readlink -f -- "$0")")"
 
 log=./provision.log
 errorLog=./provision-errors.log
@@ -27,19 +27,19 @@ exec >  >(tee -a "${log}")
 exec 2> >(tee -a "${log}" >&2)
 exec 2> >(tee -a "${errorLog}" >&2)
 
-cd $SCRIPTPATH
+cd $scriptPath
 
 IFS=$'\n'
 for script in $(ls ./sequence/*.sh | sort -n); do
 	header $(basename "${script}")
 	"${script}"
 
-	cd $SCRIPTPATH
+	cd $scriptPath
 done
 
 # Clean-up exported variables and functions
 unset DEBIAN_FRONTEND
-unset SCRIPTPATH
+unset scriptPath
 unset -f read_lst
 
 if ${screenWorkaround}; then
