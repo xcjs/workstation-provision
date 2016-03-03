@@ -1,20 +1,20 @@
 #!/bin/bash
 
-VERSION=1.8.1
-FILE=vagrant_${VERSION}_x86_64.deb
+version=1.8.1
+file=vagrant_${version}_x86_64.deb
 
-ORIGINALPATH=$(pwd)
+originalPath=$(pwd)
 
 echo "= Install Vagrant ======================================================="
 
 echo "Downloading Vagrant..."
-wget -q https://releases.hashicorp.com/vagrant/${VERSION}/${FILE}
+wget -q https://releases.hashicorp.com/vagrant/${version}/${file}
 
 echo "Installing Vagrant..."
-sudo dpkg -i ${FILE} > /dev/null
+sudo dpkg -i ${file} > /dev/null
 
 echo "Cleaning up..."
-rm ${FILE}
+rm ${file}
 
 echo "Installing Ruby gem prerequsisites..."
 sudo apt-get -qq install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev autoconf libc6-dev ncurses-dev automake libtool > /dev/null 2>&1
@@ -31,4 +31,6 @@ sudo vagrant plugin install vagrant-digitalocean > /dev/null
 echo "Installing vagrant-linode..."
 sudo vagrant plugin install vagrant-linode > /dev/null
 
-cd ${ORIGINALPATH}
+cd ${originalPath}
+
+echo
