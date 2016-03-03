@@ -14,7 +14,7 @@ echo "Downloading Intellij..."
 wget -q "https://download.jetbrains.com/idea/${file}"
 
 echo "Extracting Intellij..."
-mkdir "${installPath}"
+mkdir -p "${installPath}"
 tar -zxvf "${file}" --strip-components=1 -C "${installPath}" > /dev/null
 
 echo "Cleaning up the Intellij archive..."
