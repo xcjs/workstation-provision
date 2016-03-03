@@ -1,13 +1,14 @@
 #!/bin/bash
 
-GITREPOS=$(read_lst "./conf/git-repos.lst") 
+originalPath=$(pwd)
+gitRepos=$(read_lst "./conf/git-repos.lst") 
 
 cd ~/
 
-printf %s "$GITREPOS" | while IFS= read -r repo; do
+printf %s "${gitRepos}" | while IFS= read -r repo; do
 	repo=($repo)
 	echo "Cloning $repo..."
 	eval git clone "${repo[@]}"
 done
 
-cd ${SCRIPTPATH}
+cd "${originalPath}"
