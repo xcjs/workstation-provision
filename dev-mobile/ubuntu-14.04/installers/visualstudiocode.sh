@@ -29,6 +29,6 @@ rm "${file}"
 echo "Symlinking Visual Studio Code..."
 ln -s "${installPath}/vscode" "${symLink}"
 
-echo
-
 cd "${originalPath}"
+
+echo
