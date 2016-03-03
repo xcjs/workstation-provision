@@ -2,7 +2,7 @@
 
 file=PowerPointViewer.exe
 extractedFile=ppviewer.cab
-powerpointViewerUrl=http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/${FILE}
+powerpointViewerUrl=http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/${file}
 
 tmpFile=$(mktemp /tmp/${file}.XXXXXXXXXX)
 
