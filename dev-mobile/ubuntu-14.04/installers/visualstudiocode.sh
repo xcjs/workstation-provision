@@ -16,7 +16,7 @@ echo "Downloading Visual Studio Code ${version}..."
 wget -q "https://az764295.vo.msecnd.net/public/${version}/${file}"
 
 echo "Extracting Visual Studio Code..."
-unzip -qq $file -d "${installPath}"
+unzip -qq "${file}" -d "${installPath}"
 
 echo "Playing musical chairs with the Visual Studio Code directory..."
 vscodeDir=$(ls vscode-editor/ | head -1)
