@@ -9,3 +9,5 @@ sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /e
 
 echo "Installing Google Chrome..."
 sudo apt-get -qq update && sudo apt-get -qq install google-chrome-stable
+
+echo
