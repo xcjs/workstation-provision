@@ -16,17 +16,17 @@ echo "Installing prequiresites to extract the font..."
 sudo apt-get -qq install font-manager cabextract > /dev/null
 
 echo "Downloading Microsoft PowerPointViewer..."
-wget -q ${powerpointViewerUrl} -O ${tmpFile}
+wget -q "${powerpointViewerUrl}" -O "${tmpFile}"
 
 cd /tmp
 
 echo "Extracting ppviewer.cab from PowerPointViewer..."
-cabextract -q -L -F ${extractedFile} ${tmpFile}
+cabextract -q -L -F "${extractedFile}" "${tmpFile}"
 
 echo "Extracting ppviewer.cab..."
-cabextract -q ${extractedFile}
+cabextract -q "${extractedFile}"
 
-rm ${extractedFile}
+rm "${extractedFile}"
 
 echo "Copying Consolas to ~/.fonts/"
 cp CONSOLA*.TTF ~/.fonts/
@@ -34,8 +34,8 @@ cp CONSOLA*.TTF ~/.fonts/
 
 echo "Removing the PowerPointViewer..."
 cd ../
-rm $tmpFile
+rm "${tmpFile}"
 
-cd ${originalPath}
+cd "${originalPath}"
 
 echo
