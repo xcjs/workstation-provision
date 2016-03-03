@@ -11,18 +11,18 @@ mkdir -p ~/bin
 cd ~/bin
 
 echo "Downloading Intellij..."
-wget -q https://download.jetbrains.com/idea/${file}
+wget -q "https://download.jetbrains.com/idea/${file}"
 
 echo "Extracting Intellij..."
-mkdir ${installPath}
-tar -zxvf ${file} --strip-components=1 -C ${installPath} > /dev/null
+mkdir "${installPath}"
+tar -zxvf "${file}" --strip-components=1 -C "${installPath}" > /dev/null
 
 echo "Cleaning up the Intellij archive..."
-rm ${file}
+rm "${file}"
 
 echo "Symlinking Intellij..."
-ln -s ${installPath}/bin/idea.sh intellij
+ln -s "${installPath}/bin/idea.sh" intellij
 
-cd ${originalPath}
+cd "${originalPath}"
 
 echo
