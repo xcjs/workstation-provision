@@ -1,12 +1,12 @@
 #!/bin/sh
 
-FILE=PowerPointViewer.exe
-EXTRACTEDFILE=ppviewer.cab
-POWERPOINTVIEWERURL=http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/${FILE}
+file=PowerPointViewer.exe
+extractedFile=ppviewer.cab
+powerpointViewerUrl=http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/${FILE}
 
-TMPFILE=$(mktemp /tmp/${FILE}.XXXXXXXXXX)
+tmpFile=$(mktemp /tmp/${file}.XXXXXXXXXX)
 
-ORIGINALPATH=$(pwd)
+originalPath=$(pwd)
 
 echo "= Install the Consolas Font ============================================="
 
@@ -16,17 +16,17 @@ echo "Installing prequiresites to extract the font..."
 sudo apt-get -qq install font-manager cabextract > /dev/null
 
 echo "Downloading Microsoft PowerPointViewer..."
-wget -q ${POWERPOINTVIEWERURL} -O ${TMPFILE}
+wget -q ${powerpointViewerUrl} -O ${tmpFile}
 
 cd /tmp
 
 echo "Extracting ppviewer.cab from PowerPointViewer..."
-cabextract -q -L -F ${EXTRACTEDFILE} ${TMPFILE}
+cabextract -q -L -F ${extractedFile} ${tmpFile}
 
 echo "Extracting ppviewer.cab..."
-cabextract -q ${EXTRACTEDFILE}
+cabextract -q ${extractedFile}
 
-rm ${EXTRACTEDFILE}
+rm ${extractedFile}
 
 echo "Copying Consolas to ~/.fonts/"
 cp CONSOLA*.TTF ~/.fonts/
@@ -34,4 +34,8 @@ cp CONSOLA*.TTF ~/.fonts/
 
 echo "Removing the PowerPointViewer..."
 cd ../
-rm $TMPFILE
+rm $tmpFile
+
+cd ${originalPath}
+
+echo
