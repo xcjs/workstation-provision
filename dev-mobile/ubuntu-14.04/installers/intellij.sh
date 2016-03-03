@@ -1,9 +1,9 @@
 #!/bin/bash
 
-FILE=ideaIU-15.0.3.tar.gz
-INSTALLPATH=intellij-ide
+file=ideaIU-15.0.3.tar.gz
+installPath=intellij-ide
 
-ORIGINALPATH=$(pwd)
+originalPath=$(pwd)
 
 echo "= Install Intellij ======================================================"
 
@@ -11,16 +11,18 @@ mkdir -p ~/bin
 cd ~/bin
 
 echo "Downloading Intellij..."
-wget -q https://download.jetbrains.com/idea/${FILE}
+wget -q https://download.jetbrains.com/idea/${file}
 
 echo "Extracting Intellij..."
-mkdir ${INSTALLPATH}
-tar -zxvf ${FILE} --strip-components=1 -C ${INSTALLPATH} > /dev/null
+mkdir ${installPath}
+tar -zxvf ${file} --strip-components=1 -C ${installPath} > /dev/null
 
 echo "Cleaning up the Intellij archive..."
-rm ${FILE}
+rm ${file}
 
 echo "Symlinking Intellij..."
-ln -s ${INSTALLPATH}/bin/idea.sh intellij
+ln -s ${installPath}/bin/idea.sh intellij
 
-cd ${ORIGINALPATH}
+cd ${originalPath}
+
+echo
