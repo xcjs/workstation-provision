@@ -18,9 +18,11 @@ mkdir "${installPath}"
 tar -zxvf "${file}" --strip-components=1 -C "${installPath}" > /dev/null
 
 echo "Cleaning up the PHPStorm archive..."
-rm $file
+rm "${file}"
 
 echo "Symlinking PHPStorm..."
 ln -s "${installPath}/bin/phpstorm.sh" phpstorm 
 
 cd "${originalPath}"
+
+echo
