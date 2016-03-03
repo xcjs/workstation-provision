@@ -13,22 +13,22 @@ mkdir -p ~/bin
 cd ~/bin
 
 echo "Downloading Visual Studio Code ${version}..."
-wget -q https://az764295.vo.msecnd.net/public/${version}/${file}
+wget -q "https://az764295.vo.msecnd.net/public/${version}/${file}"
 
 echo "Extracting Visual Studio Code..."
-unzip -qq $file -d ${installPath}
+unzip -qq $file -d "${installPath}"
 
 echo "Playing musical chairs with the Visual Studio Code directory..."
 vscodeDir=$(ls vscode-editor/ | head -1)
-mv ${installPath}/*/* ./${installPath}/
-rmdir ${installPath}/${vscodeDir}
+mv "${installPath}/*/*" "./${installPath}/"
+rmdir "${installPath}/${vscodeDir}"
 
 echo "Cleaning up the archive..."
-rm ${file}
+rm "${file}"
 
 echo "Symlinking Visual Studio Code..."
-ln -s ${installPath}/vscode ${symLink}
+ln -s "${installPath}/vscode" "${symLink}"
 
 echo
 
-cd ${originalPath}
+cd "${originalPath}"
