@@ -1,9 +1,9 @@
 #!/bin/bash
 
-FILE=PhpStorm-10.0.3.tar.gz
-INSTALLPATH=phpstorm-ide
+file=PhpStorm-10.0.3.tar.gz
+installPath=phpstorm-ide
 
-ORIGINALPATH=$(pwd)
+originalPath=$(pwd)
 
 echo "= Install PHPStorm ======================================================"
 
@@ -14,13 +14,13 @@ echo "Downloading PHPStorm..."
 wget -q https://download.jetbrains.com/webide/${FILE}
 
 echo "Extracting PHPStorm..."
-mkdir ${INSTALLPATH}
-tar -zxvf ${FILE} --strip-components=1 -C ${INSTALLPATH} > /dev/null
+mkdir ${installPath}
+tar -zxvf ${FILE} --strip-components=1 -C ${installPath} > /dev/null
 
 echo "Cleaning up the PHPStorm archive..."
 rm $FILE
 
 echo "Symlinking PHPStorm..."
-ln -s ${INSTALLPATH}/bin/phpstorm.sh phpstorm 
+ln -s ${installPath}/bin/phpstorm.sh phpstorm 
 
-cd ${ORIGINALPATH}
+cd ${originalPath}
