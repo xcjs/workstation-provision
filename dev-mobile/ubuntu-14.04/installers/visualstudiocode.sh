@@ -19,7 +19,7 @@ echo "Extracting Visual Studio Code..."
 unzip -qq "${file}" -d "${installPath}"
 
 echo "Playing musical chairs with the Visual Studio Code directory..."
-vscodeDir=$(ls vscode-editor/ | head -1)
+vscodeDir=$(ls "${installPath}" | head -1)
 mv "${installPath}/*/*" "./${installPath}/"
 rmdir "${installPath}/${vscodeDir}"
 
