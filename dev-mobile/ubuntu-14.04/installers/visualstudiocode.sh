@@ -20,7 +20,7 @@ unzip -qq "${file}" -d "${installPath}"
 
 echo "Playing musical chairs with the Visual Studio Code directory..."
 vscodeDir=$(ls "${installPath}" | head -1)
-mv "${installPath}/*/*" "./${installPath}/"
+mv "${installPath}"/*/* "./${installPath}/"
 rmdir "${installPath}/${vscodeDir}"
 
 echo "Cleaning up the archive..."
