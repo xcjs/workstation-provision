@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages=$(read_lst "./conf/packages.lst")
+packages=$(read_lst "./lst/packages.lst")
 
 printf %s "${packages}" | while IFS= read -r package; do
 	if test -x "./pre/${package}.sh"; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 originalPath=$(pwd)
-gitRepos=$(read_lst "./conf/git-repos.lst") 
+gitRepos=$(read_lst "./lst/git-repos.lst") 
 
 cd ~/
 

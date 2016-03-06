@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ppaPackages=$(read_lst "./conf/ppa-packages.lst")
+ppaPackages=$(read_lst "./lst/ppa-packages.lst")
 
 echo "Checking for and installing third party PPA package updates..."
 sudo apt-get -qq update && sudo -E apt-get -qq upgrade > /dev/null 2>&1 && sudo -E apt-get -qq dist-upgrade > /dev/null 2>&1
