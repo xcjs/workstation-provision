@@ -6,6 +6,9 @@
 
 echo "= Install .NET Core ====================================================="
 
+originalPath=$(pwd)
+cd ~/
+
 echo "Installing the .NET Core prerequsisites..."
 sudo apt-get -qq install \
 	unzip \
@@ -39,3 +42,5 @@ sudo make
 sudo make install
 sudo rm -rf /usr/local/src/libuv-1.8.0 && cd ~/
 sudo ldconfig
+
+cd "${originalPath}"
