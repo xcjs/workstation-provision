@@ -5,7 +5,7 @@ installPath=datagrip-ide
 
 originalPath=$(pwd)
 
-echo "= Install DataGrip ======================================================="
+echo "= Install DataGrip ======================================================"
 
 mkdir -p ~/bin
 cd ~/bin
