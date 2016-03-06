@@ -22,7 +22,7 @@ numix-icon-theme
 numix-icon-theme-bevel
 numix-icon-theme-circle
 #numix-plymouth-theme
-#numix-tools
+numix-tools
 numix-wallpaper^
 pidgin
 pidgin-plugin-pack
