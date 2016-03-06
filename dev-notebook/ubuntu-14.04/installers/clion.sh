@@ -12,7 +12,6 @@ cd ~/bin
 
 echo "Downloading CLion..."
 wget -q "https://download.jetbrains.com/cpp/${file}"
-https://download.jetbrains.com/cpp/clion-1.2.4.tar.gz
 
 echo "Extracting CLion..."
 mkdir -p "${installPath}"
