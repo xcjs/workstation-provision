@@ -1,3 +1,4 @@
+#android-studio
 apache2
 php5
 php5-cli
@@ -8,7 +9,6 @@ libapache2-mod-php5
 atom
 brackets
 cinnamon
-android-studio
 darktable
 fluxgui
 git

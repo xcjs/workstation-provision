@@ -14,7 +14,7 @@ ppa:webupd8team/brackets
 ppa:webupd8team/sublime-text-2
 
 # Android Studio
-ppa:paolorotolo/android-studio 
+# ppa:paolorotolo/android-studio 
 
 # Zeal offline documentation browser
 ppa:zeal-developers/ppa
