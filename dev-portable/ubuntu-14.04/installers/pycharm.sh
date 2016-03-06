@@ -5,7 +5,7 @@ installPath=pycharm-ide
 
 originalPath=$(pwd)
 
-echo "= Install PyCharm ======================================================"
+echo "= Install PyCharm ======================================================="
 
 mkdir -p ~/bin
 cd ~/bin
@@ -21,7 +21,7 @@ echo "Cleaning up the PyCharm archive..."
 rm "${file}"
 
 echo "Symlinking PyCharm..."
-ln -s "${installPath}/bin/idea.sh" pycharm
+ln -s "${installPath}/bin/pycharm.sh" pycharm
 
 cd "${originalPath}"
 
