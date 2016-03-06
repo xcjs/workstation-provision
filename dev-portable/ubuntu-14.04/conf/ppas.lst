@@ -43,5 +43,8 @@ ppa:minecraft-installer-peeps/minecraft-installer
 # Numix Theme
 ppa:numix/ppa
 
-#DarkTable
+# DarkTable
 ppa:pmjdebruijn/darktable-release
+
+# Midori
+ppa:midori/ppa
