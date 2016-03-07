@@ -12,8 +12,6 @@ cd ~/bin
 
 echo "Downloading WebStorm..."
 wget -q "https://download.jetbrains.com/webstorm/${file}"
-https://download.jetbrains.com/webstorm/WebStorm-11.0.3.tar.gz
-
 
 echo "Extracting WebStorm..."
 mkdir -p "${installPath}"
