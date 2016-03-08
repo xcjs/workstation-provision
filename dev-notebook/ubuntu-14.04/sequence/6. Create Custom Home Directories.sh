@@ -1,5 +1,7 @@
 #!/bin/bash
 
+originalPath=$(pwd)
+
 echo "Making custom home directories..."
 mkdir -p ~/bin ~/Projects ~/src ~/.icons ~/.themes ~/Pictures/UI
 
@@ -8,3 +10,9 @@ echo "Linking local theme resources for gksu application support..."
 cd ~/
 sudo ln -s .icons /root/.icons
 sudo ln -s .themes /root/.themes 
+
+echo "Linking the Flattr icon themes..."
+ln -s .icons/flattr-icons/Flattr .icons/Flattr
+ln -s .icons/flattr-icons/Flattr-Dark .icons/Flattr-Dark
+
+cd "${originalPath}"
