@@ -12,4 +12,4 @@ shopt -s expand_aliases
 source ~/.bash_aliases
 
 echo "Installing Laravel Installer..."
-composer global require "laravel/installer=~1.1"
+sudo php /usr/local/bin/composer.phar global require "laravel/installer=~1.1"
