@@ -17,10 +17,10 @@ echo "Extracting RubyMine..."
 mkdir -p "${installPath}"
 tar -zxvf "${file}" --strip-components=1 -C "${installPath}" > /dev/null
 
-echo "Cleaning up the DataGrip archive..."
+echo "Cleaning up the RubyMine archive..."
 rm "${file}"
 
-echo "Symlinking DataGrip..."
+echo "Symlinking RubyMine..."
 ln -s "${installPath}/bin/rubymine.sh" rubymine
 
 cd "${originalPath}"
