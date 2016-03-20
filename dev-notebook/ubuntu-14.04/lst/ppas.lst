@@ -1,5 +1,5 @@
 # Cinnamon Desktop
-ppa:tsvetko.tsvetkov/cinnamon
+ppa:moorkai/cinnamon
 
 # Regularly updated Git
 ppa:git-core/ppa
@@ -14,7 +14,7 @@ ppa:webupd8team/brackets
 ppa:webupd8team/sublime-text-2
 
 # Android Studio
-# ppa:paolorotolo/android-studio 
+# ppa:paolorotolo/android-studio
 
 # Zeal offline documentation browser
 ppa:zeal-developers/ppa
