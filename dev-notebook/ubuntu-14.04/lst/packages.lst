@@ -13,6 +13,7 @@ htop
 nano
 realpath
 screen
+sl
 tmux
 unzip
 wajig
@@ -25,17 +26,17 @@ rdesktop
 
 # Development Tools ============================================================
 build-essential
-codeblocks 
+codeblocks
 filezilla
 lamp-server^
-meld 
-monodevelop 
-monodoc-manual 
+meld
+monodevelop
+monodoc-manual
 mysql-workbench
 openjdk-7-jdk
 openjdk-7-jre
 redis-server
-subversion 
+subversion
 tilda
 vim
 
