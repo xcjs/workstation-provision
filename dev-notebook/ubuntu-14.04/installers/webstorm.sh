@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=WebStorm-11.0.3.tar.gz
+file=WebStorm-2016.1.tar.gz
 installPath=webstorm-ide
 
 originalPath=$(pwd)
