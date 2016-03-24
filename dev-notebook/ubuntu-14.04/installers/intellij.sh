@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=ideaIU-15.0.3.tar.gz
+file=ideaIU-2016.1.tar.gz
 installPath=intellij-ide
 
 originalPath=$(pwd)
