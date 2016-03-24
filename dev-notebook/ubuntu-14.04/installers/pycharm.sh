@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=pycharm-professional-5.0.4.tar.gz
+file=pycharm-professional-2016.1.tar.gz
 installPath=pycharm-ide
 
 originalPath=$(pwd)
