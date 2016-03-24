@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=PhpStorm-10.0.3.tar.gz
+file=PhpStorm-2016.1.tar.gz
 installPath=phpstorm-ide
 
 originalPath=$(pwd)
@@ -21,7 +21,7 @@ echo "Cleaning up the PHPStorm archive..."
 rm "${file}"
 
 echo "Symlinking PHPStorm..."
-ln -s "${installPath}/bin/phpstorm.sh" phpstorm 
+ln -s "${installPath}/bin/phpstorm.sh" phpstorm
 
 cd "${originalPath}"
 
