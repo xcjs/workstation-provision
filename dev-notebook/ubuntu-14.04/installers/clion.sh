@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=clion-1.2.4.tar.gz
+file=CLion-2016.1.tar.gz
 installPath=clion-ide
 
 originalPath=$(pwd)
