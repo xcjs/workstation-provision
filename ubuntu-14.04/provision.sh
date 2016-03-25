@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export configuration=$1
+
 screenWorkaround=false
 
 # Terminal correction for binaries that don't like screen.xterm as a terminal.
@@ -11,8 +13,8 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 # Load functions
-source ./functions/header.sh
-source ./functions/read_lst.sh
+source "./${configuration}/functions/header.sh"
+source "./${configuration}/functions/read_lst.sh"
 
 # Export shared functions
 export -f read_lst
@@ -30,7 +32,7 @@ exec 2> >(tee -a "${errorLog}" >&2)
 cd $scriptPath
 
 IFS=$'\n'
-for script in $(ls ./sequence/*.sh | sort -n); do
+for script in $(ls "./${configuration}/sequence/*.sh" | sort -n); do
 	header $(basename "${script}")
 	"${script}"
 

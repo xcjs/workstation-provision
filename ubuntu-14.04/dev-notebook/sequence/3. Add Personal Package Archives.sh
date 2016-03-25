@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ppas=$(read_lst "./lst/ppas.lst")
+ppas=$(read_lst "./${configuration}/lst/ppas.lst")
 
 printf %s "${ppas}" | while IFS= read -r ppa; do
 	echo "Adding package archive ${ppa}..."

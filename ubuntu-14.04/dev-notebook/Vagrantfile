@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
 
-  config.vm.define :ubuntu14_04 do |ubuntu14_04|   
+  config.vm.define :ubuntu14_04 do |ubuntu14_04|
     # Every Vagrant virtual environment requires a box to build off of.
     ubuntu14_04.vm.box = "ubuntu/trusty64"
 
@@ -25,7 +25,7 @@ sudo apt-get -qq install cabextract
 ./provision.sh
 SCRIPT
 
-    ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
+    ubuntu14_04.vm.provision "shell", inline: $script, privileged: false, args: "dev-notebook"
   end
 
 end
