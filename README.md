@@ -29,6 +29,7 @@ provision scripts must support.
 * post/
 * pre/
 * sequence/
+* provision.*
 * Vagrantfile
 
 ### functions/
@@ -81,7 +82,7 @@ package is installed.
 
 ### pre/
 
-pre/ constains scripts named matching packages that are executed before the
+pre/ contains scripts named matching packages that are executed before the
 package is installed.
 
 ### sequence/
@@ -89,6 +90,11 @@ package is installed.
 Sequence contains standalone scripts that can refer to other directories and
 files within the workstation type directory. These are executed directly by
 provision.* in numerical order.
+
+### provision.*
+
+A symlink to the shared provision script in the parent directory. This
+automatically seeks out sequence scripts to execute in numeric order.
 
 ### Vagrantfile
 
@@ -101,10 +107,7 @@ provision script in the parent directory.
 Executing provision.* will install preferred applications, customize selected
 settings, and prepare a workstation for preferred tasks.
 
-The provision script requires the workstation-type to be specified as the first
-argument.
-
-	./provision.* workstation-type
+	./provision.*
 
 ## Testing
 
