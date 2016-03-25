@@ -25,7 +25,7 @@ sudo apt-get -qq install cabextract
 ./provision.sh
 SCRIPT
 
-    ubuntu14_04.vm.provision "shell", inline: $script, privileged: false, args: "dev-notebook"
+    ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
   end
 
 end

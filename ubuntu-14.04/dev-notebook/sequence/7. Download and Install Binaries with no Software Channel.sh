@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in $(ls ./${configuration}/installers/*.sh); do
+for file in $(ls ./installers/*.sh); do
 
 	echo "Executing custom installer ${file}..."
 	"${file}"

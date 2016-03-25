@@ -1,13 +1,13 @@
 #!/bin/bash
 
-packages=$(read_lst "./${configuration}/lst/packages.lst")
+packages=$(read_lst "./lst/packages.lst")
 
 printf %s "${packages}" | while IFS= read -r package; do
-	if test -x "./${configuration}/pre/${package}.sh"; then
+	if test -x "./pre/${package}.sh"; then
 		echo
 		echo "There is a script to run before installing ${package}."
-		echo "Executing ./${configuration}/pre/${package}.sh..."
-		"./${configuration}/pre/${package}.sh"
+		echo "Executing ./pre/${package}.sh..."
+		"./pre/${package}.sh"
 		echo
 	fi
 
@@ -17,8 +17,8 @@ printf %s "${packages}" | while IFS= read -r package; do
 	if test -x "./post/${package}.sh"; then
 		echo
 		echo "There is a script to run after installing ${package}."
-		echo "Executing ./${configuration}/post/${package}.sh..."
-		"./${configuration}/post/${package}.sh"
+		echo "Executing ./post/${package}.sh..."
+		"./post/${package}.sh"
 		echo
 	fi
 done
