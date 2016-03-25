@@ -22,7 +22,7 @@ $script = <<SCRIPT
 cd /vagrant
 echo "Installing cabextract..."
 sudo apt-get -qq install cabextract
-./provision.sh
+../provision.sh
 SCRIPT
 
     ubuntu14_04.vm.provision "shell", inline: $script, privileged: false, args: "dev-notebook"
