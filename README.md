@@ -94,7 +94,7 @@ provision.* in numerical order.
 
 Each workstation type contains a Vagrantfile for virtual testing. The
 Vagrantfile should pass the workstation type as the first parameter to the
-provision script in the above directory.
+provision script in the parent directory.
 
 ## Executing
 
