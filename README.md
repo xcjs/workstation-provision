@@ -93,8 +93,8 @@ provision.* in numerical order.
 
 ### provision.*
 
-A symlink to the shared provision script in the parent directory. This
-automatically seeks out sequence scripts to execute in numeric order.
+The primary script inside the workstation-type directory. It calls scripts
+in numeric order from the sequence directory.
 
 ### Vagrantfile
 
