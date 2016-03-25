@@ -5,18 +5,19 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. The most common configuration
+    # All Vagrant configuration is done here. The most common configuration
     # options are documented and commented below. For a complete reference,
     # please see the online documentation at vagrantup.com.
 
-  config.vm.provider "virtualbox" do |vbox|
-      vbox.name = "Ubuntu 14.04 Mobile Development Provisioning Assistant"
-  end
+    config.vm.provider "virtualbox" do |vbox|
+        vbox.name = "Ubuntu 14.04 Mobile Development Provisioning Assistant"
+        vbox.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+    end
 
 
-  config.vm.define :ubuntu14_04 do |ubuntu14_04|
-    # Every Vagrant virtual environment requires a box to build off of.
-    ubuntu14_04.vm.box = "ubuntu/trusty64"
+    config.vm.define :ubuntu14_04 do |ubuntu14_04|
+        # Every Vagrant virtual environment requires a box to build off of.
+        ubuntu14_04.vm.box = "ubuntu/trusty64"
 
 $script = <<SCRIPT
 cd /vagrant
@@ -25,7 +26,6 @@ sudo apt-get -qq install cabextract
 ./provision.sh
 SCRIPT
 
-    ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
-  end
-
+        ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
+    end
 end
