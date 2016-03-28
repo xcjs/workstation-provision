@@ -10,13 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # please see the online documentation at vagrantup.com.
 
     config.vm.provider "virtualbox" do |vbox|
-        vbox.name = "Ubuntu 14.04 Mobile Development Provisioning Assistant"
+        vbox.name = "dev-notebook"
     end
 
 
-    config.vm.define :ubuntu14_04 do |ubuntu14_04|
+    config.vm.define :devNotebook do |devNotebook|
         # Every Vagrant virtual environment requires a box to build off of.
-        ubuntu14_04.vm.box = "ubuntu/trusty64"
+        devNotebook.vm.box = "ubuntu/trusty64"
 
 $script = <<SCRIPT
 cd /vagrant
@@ -25,6 +25,6 @@ sudo apt-get -qq install cabextract
 ./provision.sh
 SCRIPT
 
-        ubuntu14_04.vm.provision "shell", inline: $script, privileged: false
+        devNotebook.vm.provision "shell", inline: $script, privileged: false
     end
 end
