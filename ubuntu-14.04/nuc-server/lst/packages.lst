@@ -1,7 +1,7 @@
-# Desktop Environments
+# Desktop Environments =========================================================
 xfce4
 
-# Command Line Utilities
+# Command Line Utilities =======================================================
 gksu
 htop
 nano
@@ -13,13 +13,13 @@ vim
 w3m
 whois
 
-# Multimedia
+# Multimedia ===================================================================
 ubuntu-restricted-extras
 
-# Internet
+# Internet =====================================================================
 deluge-gtk
 
-# Runtimes
+# Runtimes =====================================================================
 openjdk-7-jre
 
 # Services =====================================================================
@@ -27,6 +27,6 @@ lamp-server^
 openssh-server
 rdesktop
 
-# Utilities
+# Utilities ====================================================================
 p7zip-full
 unzip
