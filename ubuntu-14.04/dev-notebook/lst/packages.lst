@@ -28,7 +28,6 @@ rdesktop
 build-essential
 codeblocks
 filezilla
-lamp-server^
 meld
 monodevelop
 monodoc-manual

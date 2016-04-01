@@ -19,8 +19,8 @@ ppa:webupd8team/sublime-text-2
 # Zeal offline documentation browser
 ppa:zeal-developers/ppa
 
-# Regularly updated LAMP packages
-ppa:ondrej/php5
+# Regularly updated LAMP packages with PHP 7.0
+ppa:ondrej/php
 
 # Newer versions of Remmina with better compatibility with RDP
 ppa:remmina-ppa-team/remmina-next
