@@ -12,15 +12,15 @@ under each supported platform.
 Each supported platform and version contains a directory in the root of the
 project in the following format:
 
-	{{operating_system-version}}/{{workstation-type}}/
+	{{operating_system-version}}/{{workstation-configuration}}/
 
 Each OS directory contains a platform-specific script named provision.*
 
 ## Workstation Path Specification
 
-Each {{workstation-type}}/ directory will contain pre-set sub-directories and
-files. These can be considered the definitive standard that the workstation
-provision scripts must support.
+Each {{workstation-configuration}}/ directory will contain pre-set
+sub-directories and files. These can be considered the definitive standard that
+the workstation provision scripts must support.
 
 * functions/
 * installers/
@@ -93,8 +93,8 @@ provision.* in numerical order.
 
 ### provision.*
 
-The primary script inside the workstation-type directory. It calls scripts
-in numeric order from the sequence directory.
+The primary script inside the workstation-configuration directory. It calls
+scripts in numeric order from the sequence directory.
 
 ### Vagrantfile
 
