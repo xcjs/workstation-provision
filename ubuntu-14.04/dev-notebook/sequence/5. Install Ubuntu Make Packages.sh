@@ -3,7 +3,8 @@
 packages=$(read_lst "./lst/umake.lst")
 
 printf %s "${packages}" | while IFS= read -r package; do
-    packageName=($package)[1]
+    read -a args <<< $package
+    packageName="${args[1]}"
 
 	echo "Installing umake package ${packageName}..."
 	umake ${package} > /dev/null 2>&1
