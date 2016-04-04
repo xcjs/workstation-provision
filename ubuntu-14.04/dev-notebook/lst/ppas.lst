@@ -51,3 +51,6 @@ ppa:midori/ppa
 
 # Stylish Dark Theme
 ppa:noobslab/themes
+
+# umake
+ppa:ubuntu-desktop/ubuntu-make
