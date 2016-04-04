@@ -1,0 +1,10 @@
+#!/bin/bash
+
+packages=$(read_lst "./lst/umake.lst")
+
+printf %s "${packages}" | while IFS= read -r package; do
+    packageName=($package)[1]
+
+	echo "Installing umake package ${packages}..."
+	umake ${package} > /dev/null 2>&1
+done
