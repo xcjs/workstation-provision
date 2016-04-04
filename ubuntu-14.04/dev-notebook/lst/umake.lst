@@ -1,9 +1,12 @@
-android
-ide datagrip
-ide clion
-ide idea-ultimate
-ide pycharm-professional
-ide phpstorm
-ide rubymine
-ide webstorm
-ide visual-studio-code
+android android-studio --accept-license ~/.local/share/umake/android-studio
+android android-sdk --accept-license ~/.local/share/umake/android-sdk
+
+ide clion ~/.local/share/umake/ide/cion
+ide datagrip ~/.local/share/umake/ide/datagrip
+ide idea-ultimate ~/.local/share/umake/ide/idea-ultimate
+ide phpstorm ~/.local/share/umake/ide/phpstorm
+ide pycharm-professional ~/.local/share/umake/ide/pycharm-professional
+ide rubymine ~/.local/share/umake/ide/rubymine
+ide webstorm ~/.local/share/umake/ide/webstorm
+
+ide visual-studio-code --accept-license ~/.local/share/umake/ide/visual-studio-code
