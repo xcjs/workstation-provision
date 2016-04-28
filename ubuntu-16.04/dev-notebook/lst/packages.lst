@@ -1,0 +1,64 @@
+# System Utilities =============================================================
+gksu
+gnome-tweak-tool
+gparted
+network-manager-openvpn-gnome
+ppa-purge
+ubuntu-restricted-extras
+unetbootin
+unity-tweak-tool
+
+# Command Line Utilities =======================================================
+htop
+nano
+realpath
+screen
+sl
+tmux
+unzip
+wajig
+w3m
+whois
+
+# Services =====================================================================
+openssh-server
+rdesktop
+
+# Development Tools ============================================================
+build-essential
+codeblocks
+filezilla
+meld
+monodevelop
+monodoc-manual
+mysql-workbench
+openjdk-7-jdk
+openjdk-7-jre
+redis-server
+subversion
+tilda
+vim
+
+# Graphics =====================================================================
+gimp
+inkscape
+krita
+rawtherapee
+
+# Internet =====================================================================
+skype
+
+# Media ========================================================================
+audacious
+audacity
+gnome-music
+easytag
+vlc
+
+# Utilities ====================================================================
+compizconfig-settings-manager
+compiz-plugins
+grsync
+keepassx
+kupfer
+p7zip-full
