@@ -26,7 +26,6 @@ rdesktop
 
 # Development Tools ============================================================
 build-essential
-codeblocks
 filezilla
 meld
 monodevelop
