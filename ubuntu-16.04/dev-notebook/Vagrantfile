@@ -13,11 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vbox.name = "dev-notebook"
     end
 
-    config.vm.synced_folder "./", "/vagrant"
-
     config.vm.define :devNotebook do |devNotebook|
         # Every Vagrant virtual environment requires a box to build off of.
-        devNotebook.vm.box = "ubuntu/xenial64"
+        devNotebook.vm.box = "gbarbieru/xenial"
 
 $script = <<SCRIPT
 cd /vagrant
