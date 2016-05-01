@@ -1,4 +1,7 @@
 # System Utilities =============================================================
+# Specified for server images used in Vagrant to make other install faster
+# later.
+ubuntu-desktop
 gksu
 gnome-tweak-tool
 gparted
