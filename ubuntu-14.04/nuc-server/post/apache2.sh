@@ -15,3 +15,6 @@ sudo a2enmod proxy_http
 
 echo "Enabling the BlurMontior site configuration..."
 sudo a2ensite 001-blur.conf
+
+echo "Restarting apache2..."
+sudo service apache2 restart
