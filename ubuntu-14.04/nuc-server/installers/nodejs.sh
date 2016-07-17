@@ -17,11 +17,11 @@ echo "Refreshing the command cache..."
 hash -r
 
 echo "Updating NPM..."
-sudo npm install -g npm > /dev/null
+sudo npm install -g npm > /dev/null 2>&1
 
 # Install commonly used npm packages globally
 echo "Installing Bower..."
-sudo npm install -g bower > /dev/null
+sudo npm install -g bower > /dev/null 2>&1
 
 echo "Installing Gulp..."
-sudo npm install -g gulp > /dev/null
+sudo npm install -g gulp > /dev/null 2>&1
