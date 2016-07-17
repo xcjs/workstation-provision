@@ -1,6 +1,6 @@
 #!/bin/bash
 
-blurConfSrc="./config/001-blur.conf"
+blurConfSrc="./config/apache2/001-blur.conf"
 blurConfDest="/etc/apache2/sites-available/001-blur.conf" 
 apacheUser="www-data"
 
@@ -15,3 +15,6 @@ sudo a2enmod proxy_http
 
 echo "Enabling the BlurMontior site configuration..."
 sudo a2ensite 001-blur.conf
+
+echo "Restarting apache2..."
+sudo service apache2 restart
