@@ -1,6 +1,6 @@
 #!/bin/bash
 
-blurConfSrc="./config/001-blur.conf"
+blurConfSrc="./config/apache2/001-blur.conf"
 blurConfDest="/etc/apache2/sites-available/001-blur.conf" 
 apacheUser="www-data"
 
