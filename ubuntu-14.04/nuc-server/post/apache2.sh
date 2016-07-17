@@ -10,11 +10,11 @@ sudo chown "${apacheUser}" "${blurConfDest}"
 sudo chgrp "${apacheUser}" "${blurConfDest}"
 
 echo "Enabling the required proxy modules..."
-sudo a2enmod proxy
-sudo a2enmod proxy_http
+sudo a2enmod proxy > /dev/null 2>&1
+sudo a2enmod proxy_http > /dev/null 2>&1
 
 echo "Enabling the BlurMontior site configuration..."
-sudo a2ensite 001-blur.conf
+sudo a2ensite 001-blur.conf > /dev/null 2>&1
 
 echo "Restarting apache2..."
-sudo service apache2 restart
+sudo service apache2 restart > /dev/null 2>&1
