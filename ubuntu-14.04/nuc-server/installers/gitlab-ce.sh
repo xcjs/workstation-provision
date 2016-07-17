@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "= Install GitLab Community Edition ======================================"
+
 echo "Installing GitLab dependencies..."
 sudo apt-get install curl openssh-server ca-certificates postfix
 
